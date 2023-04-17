@@ -16,22 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="四、实验思路 （1）创建分享文件的过程 实验使用四台电脑，其中一台电脑作为Tracker服务器，其它三台电脑作为同等peer。当某台peer主机拥有可分享的文件时，将BT种子（按可分享文件生成）、标识符（表示分享）以数据报套接字形式（对应UDP协议）发送给Tracker服务器，Tracker服务器记录分享文件的BT种子和分享的主机IP地址，形成BT种子与分享方主机IP的BT-IP映射表。 （2）请">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/09/01/hello-world/index.html">
+<meta property="og:title" content="SOCKET编程（比特流模拟）实验设计">
+<meta property="og:url" content="http://example.com/2022/11/20/SOCKET%E7%BC%96%E7%A8%8B%EF%BC%88%E6%AF%94%E7%89%B9%E6%B5%81%E6%A8%A1%E6%8B%9F%EF%BC%89%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="四、实验思路 （1）创建分享文件的过程 实验使用四台电脑，其中一台电脑作为Tracker服务器，其它三台电脑作为同等peer。当某台peer主机拥有可分享的文件时，将BT种子（按可分享文件生成）、标识符（表示分享）以数据报套接字形式（对应UDP协议）发送给Tracker服务器，Tracker服务器记录分享文件的BT种子和分享的主机IP地址，形成BT种子与分享方主机IP的BT-IP映射表。 （2）请">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-09-28T09:41:56.862Z">
+<meta property="article:published_time" content="2022-11-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-20T13:01:19.535Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>SOCKET编程（比特流模拟）实验设计 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="SOCKET编程（比特流模拟）实验设计"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-01 00:00" pubdate>
-          2022年9月1日 凌晨
+        <time datetime="2022-11-20 00:00" pubdate>
+          2022年11月20日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          913 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          4 分钟
+          8 分钟
         
       </span>
     
@@ -269,24 +269,35 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">SOCKET编程（比特流模拟）实验设计</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p><strong>四、实验思路</strong></p>
+<p><strong>（1）创建分享文件的过程</strong></p>
+<p>实验使用四台电脑，其中一台电脑作为Tracker服务器，其它三台电脑作为同等peer。当某台peer主机拥有可分享的文件时，将BT种子（按可分享文件生成）、标识符（表示分享）以数据报套接字形式（对应UDP协议）发送给Tracker服务器，Tracker服务器记录分享文件的BT种子和分享的主机IP地址，形成BT种子与分享方主机IP的BT-IP映射表。</p>
+<p><strong>（2）请求文件方获得分享文件方IP地址的过程</strong></p>
+<p>当某台主机需要下载某文件时，以数据报套接字形式（对应UDP协议）不断给Tracker服务器发送BT种子和标识符（表示请求），直到收到响应。</p>
+<p>Tracker服务器按照自己形成的BT-IP映射表按BT种子进行查找，并向请求方以数据报套接字形式（对应UDP协议）发送一定数量的分享方IP地址</p>
+<p><strong>（3）请求方向分享方请求文件</strong></p>
+<p>请求方按收到的分享方IP地址，按请求文件的大小和自己选择的分享方的数量形成不同的txt文件（自定义的.torrent文件），依次向自己选择的分享方IP发请求数据流套接字（对应TCP协议）连接并发送txt文件。</p>
+<p><strong>（4）分享方向请求方传输文件</strong></p>
+<p>分享方按接收到的txt文件向请求方传输指定的部分文件。</p>
+<p><strong>（5）请求方将一次收到的文件局部按追加写，拼接为完整文件。</strong></p>
+<p><strong>（6）至此，一次分享、请求文件和文件传输结束</strong></p>
+<p><strong>五、实验细节</strong></p>
+<p><strong>（1）定义BT种子生成</strong></p>
+<p>BT种子为一个字符串，是文件的唯一标识，此处我们以文件名+文件大小（字节为单位）定义BT种子格式内容。</p>
+<p><strong>（2）定义Tracker服务器</strong></p>
+<p>1.默认所有电脑客户端已知Tracker服务器IP地址；</p>
+<p>2.分享方可以向Tracker服务器发数据报套接字（对应UDP协议），内容包含分享文件的BT种子、标识符（表示分享）；</p>
+<p>3.请求方可以向Tracker服务器发送数据报套接字（对应UDP协议）请求，内容包含请求文件的BT种子、标识符（表示请求），以获取所需文件分享方的IP地址；</p>
+<p><strong>（3）自定义的txt文件</strong></p>
+<p>作用：</p>
+<p>通过自定义的类似.torrent文件的txt文本，确定请求的文件，负责发送的文件局部。</p>
+<p>内容格式为：</p>
+<p>请求文件的BT种子；请求文件起始字节处；请求文件的大小（字节为单位）；</p>
 
                 
               </div>
@@ -299,7 +310,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/blog/">#blog</a>
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">#计算机网络</a>
       
     </div>
   
@@ -311,8 +322,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2022/09/01/hello-world/</div>
+      <div>SOCKET编程（比特流模拟）实验设计</div>
+      <div>http://example.com/2022/11/20/SOCKET编程（比特流模拟）实验设计/</div>
     </div>
     <div class="license-meta">
       
@@ -324,7 +335,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月1日</div>
+          <div>2022年11月20日</div>
         </div>
       
       
@@ -356,9 +367,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/09/My-New-Post/" title="My New Post">
+                      <a href="/2023/04/17/Untitled/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">My New Post</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -366,8 +377,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/17/Hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" title="Hexo博客美化">
-                        <span class="hidden-mobile">Hexo博客美化</span>
+                      <a href="/2022/11/12/Python%E5%AD%A6%E7%9D%80%E7%8E%A9/" title="Python学着玩">
+                        <span class="hidden-mobile">Python学着玩</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
