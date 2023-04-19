@@ -16,13 +16,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="Hexo主题基本结构 .├── _config.yml			  主题的配置文件	├── languages				语言文件夹├── layout					    布局文件├── scripts						脚本文件启动时└── source						资源源文件 其中layout： layout.ejs   - 使用 EJSlayout.swig  - 使用 Swig 其中source：   CSS">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客美化">
-<meta property="og:url" content="http://example.com/2022/04/17/Hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/index.html">
+<meta property="og:url" content="http://example.com/2023/04/17/Hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo主题基本结构 .├── _config.yml			  主题的配置文件	├── languages				语言文件夹├── layout					    布局文件├── scripts						脚本文件启动时└── source						资源源文件 其中layout： layout.ejs   - 使用 EJSlayout.swig  - 使用 Swig 其中source：   CSS">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-17T12:14:32.597Z">
+<meta property="article:published_time" content="2023-04-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-19T12:24:36.408Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
@@ -67,7 +69,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -206,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-04-17 00:00" pubdate>
-          2022年4月17日 凌晨
+        <time datetime="2023-04-17 00:00" pubdate>
+          2023年4月17日 凌晨
         </time>
       </span>
     
@@ -218,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          0 字
+          202 字
         
       </span>
     
@@ -229,7 +231,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -272,7 +274,14 @@
             
               <div class="markdown-body">
                 
-                
+                <h4 id="Hexo主题基本结构"><a href="#Hexo主题基本结构" class="headerlink" title="Hexo主题基本结构"></a>Hexo主题基本结构</h4><blockquote>
+<p>.<br>├── _config.yml			  主题的配置文件	<br>├── languages				语言文件夹<br>├── layout					    布局文件<br>├── scripts						脚本文件启动时<br>└── source						资源源文件</p>
+<p>其中layout：</p>
+<p>layout.ejs   - 使用 EJS<br>layout.swig  - 使用 Swig</p>
+<p>其中source：</p>
+<p>  CSS、JavaScript 文件等。文件或文件夹开头名称为 _（下划线）或隐藏的文件会被忽略。 </p>
+</blockquote>
+<h4 id="source-资源文件夹"><a href="#source-资源文件夹" class="headerlink" title="source 资源文件夹"></a>source 资源文件夹</h4>
                 
               </div>
             
@@ -297,7 +306,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Hexo博客美化</div>
-      <div>http://example.com/2022/04/17/Hexo博客美化/</div>
+      <div>http://example.com/2023/04/17/Hexo博客美化/</div>
     </div>
     <div class="license-meta">
       
@@ -309,7 +318,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年4月17日</div>
+          <div>2023年4月17日</div>
         </div>
       
       
@@ -341,9 +350,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/01/hello-world/" title="Hello World">
+                      <a href="/2023/04/19/CSS%E5%B8%83%E5%B1%80/" title="CSS布局">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
+                        <span class="hidden-mobile">CSS布局</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -351,7 +360,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/17/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/" title="Java多线程与进程">
+                      <a href="/2023/04/17/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/" title="Java多线程与进程">
                         <span class="hidden-mobile">Java多线程与进程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
