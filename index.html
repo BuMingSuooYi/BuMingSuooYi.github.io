@@ -264,6 +264,46 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/04/26/Vue-5-%E6%8C%87%E4%BB%A4/" target="_self">
+          Vue-5-指令
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/04/26/Vue-5-%E6%8C%87%E4%BB%A4/" target="_self">
+        <div>
+          1.内置指令 Vue中的内置指令包括：  v-bind：用于绑定一个或多个属性值到表达式。 v-if&#x2F;v-else-if&#x2F;v-else：用于条件渲染，根据表达式的真假来显示或隐藏元素。 v-show：也用于条件渲染，但是不会删除元素，而是通过CSS样式控制显示与隐藏。 v-for：用于循环渲染列表数据。 v-on：用于绑定事件处理函数。 v-model：用于双向绑定表单元素和组
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-04-26 00:00" pubdate>
+              2023-04-26
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/04/25/Vue-2-%E4%BA%8B%E4%BB%B6/" target="_self">
           Vue-2-事件
         </a>
@@ -273,6 +313,46 @@
       <a class="index-excerpt index-excerpt__noimg" href="/2023/04/25/Vue-2-%E4%BA%8B%E4%BB%B6/" target="_self">
         <div>
           1.事件处理v-on v-on:clock=&quot;函数名&quot;可简写为@clock=&quot;函数名&quot; 函数写在vm的methods:{}内，原理是methods内的函数会备份到vm内(和data到_data一样)，但函数不需要做数据代理。 如果把函数写在data:{}内vm备份到_data后虽然有效，但备份到_data后会做数据代理(产生get,set方法)，加重vm的负
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-04-25 00:00" pubdate>
+              2023-04-25
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/04/25/Vue-3-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8C%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7/" target="_self">
+          Vue-3-计算属性和监听属性
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/04/25/Vue-3-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8C%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7/" target="_self">
+        <div>
+          1.计算属性computed  要用的属性通过已有的属性计算得来  原理：底层借助Object.defineproperty方法提供的getter和setter  get函数什么时候会执行？ （1）初次读取时会执行一次 （2）当依赖的数据发生变化时会被再次调用  优势：和methods实现相比，内部有缓存机制（复用），效率更高  备注： （1）计算属性最终会出现在vm上，直接读取使用既可 （2）如
         </div>
       </a>
 
@@ -531,86 +611,6 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/%E5%82%A8%E5%AD%98/">#储存</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/11/20/SOCKET%E7%BC%96%E7%A8%8B%EF%BC%88%E6%AF%94%E7%89%B9%E6%B5%81%E6%A8%A1%E6%8B%9F%EF%BC%89%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/" target="_self">
-          SOCKET编程（比特流模拟）实验设计
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/20/SOCKET%E7%BC%96%E7%A8%8B%EF%BC%88%E6%AF%94%E7%89%B9%E6%B5%81%E6%A8%A1%E6%8B%9F%EF%BC%89%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/" target="_self">
-        <div>
-          四、实验思路 （1）创建分享文件的过程 实验使用四台电脑，其中一台电脑作为Tracker服务器，其它三台电脑作为同等peer。当某台peer主机拥有可分享的文件时，将BT种子（按可分享文件生成）、标识符（表示分享）以数据报套接字形式（对应UDP协议）发送给Tracker服务器，Tracker服务器记录分享文件的BT种子和分享的主机IP地址，形成BT种子与分享方主机IP的BT-IP映射表。 （2）请
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-11-20 00:00" pubdate>
-              2022-11-20
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">#计算机网络</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/11/12/Python%E5%AD%A6%E7%9D%80%E7%8E%A9/" target="_self">
-          Python学着玩
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/11/12/Python%E5%AD%A6%E7%9D%80%E7%8E%A9/" target="_self">
-        <div>
-          其它 引入1import math  注释1234#当行&#x27;&#x27;&#x27;多行&#x27;&#x27;&#x27;  基本方法 输出 转义、换行 1234print(&#x27;输出了几个字&#x27;)print(&#x27;输出了几个字&#x27;*5)#格式化字符串print(&#x27;%d*%d=%2d&#x27; %(2,4,8),end=&#x27; &#x27;)
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-11-12 00:00" pubdate>
-              2022-11-12
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/python/">#python</a>
             
           </div>
         
