@@ -16,22 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="目录将 JSON 对象中的某属性值解析成一个整型数组1int[] xRange &#x3D; regionObject.getJSONArray(&quot;xRange&quot;).toList().stream().mapToInt(o -&gt; Integer.parseInt(o.toString())).toArray();  regionObject 是一个 JSON 对象，getJSON">
+    <meta name="description" content="Maven 简介是什么蓝色部分是Mave，一个项目管理工具。 将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。 管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。  解决了什么统一了Java项目的目录结构； 方便了项目的编写、编译、测试、打包等 解决了jar包冲突等问题； 下载与安装下载下载地址： Maven – Do">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中一些函数的解读">
-<meta property="og:url" content="http://example.com/2023/04/23/Java%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A3%E8%AF%BB/index.html">
+<meta property="og:title" content="Maven-1-基础">
+<meta property="og:url" content="http://example.com/2023/05/04/Maven-1-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="目录将 JSON 对象中的某属性值解析成一个整型数组1int[] xRange &#x3D; regionObject.getJSONArray(&quot;xRange&quot;).toList().stream().mapToInt(o -&gt; Integer.parseInt(o.toString())).toArray();  regionObject 是一个 JSON 对象，getJSON">
+<meta property="og:description" content="Maven 简介是什么蓝色部分是Mave，一个项目管理工具。 将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。 管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。  解决了什么统一了Java项目的目录结构； 方便了项目的编写、编译、测试、打包等 解决了jar包冲突等问题； 下载与安装下载下载地址： Maven – Do">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-23T08:59:14.479Z">
+<meta property="og:image" content="http://example.com/..%5Cpostot%5C23-05-04-1.png">
+<meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-16T08:23:01.731Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JavaMaven">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/..%5Cpostot%5C23-05-04-1.png">
   
   
   
-  <title>Java中一些函数的解读 - Hexo</title>
+  <title>Maven-1-基础 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java中一些函数的解读"></span>
+            <span id="subtitle" data-typed-text="Maven-1-基础"></span>
           
         </div>
 
@@ -208,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-23 00:00" pubdate>
-          2023年4月23日 凌晨
+        <time datetime="2023-05-04 00:00" pubdate>
+          2023年5月4日 凌晨
         </time>
       </span>
     
@@ -220,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          271 字
         
       </span>
     
@@ -231,7 +233,7 @@
         
         
         
-          12 分钟
+          3 分钟
         
       </span>
     
@@ -269,27 +271,21 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java中一些函数的解读</h1>
+            <h1 style="display: none">Maven-1-基础</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h4 id="将-JSON-对象中的某属性值解析成一个整型数组"><a href="#将-JSON-对象中的某属性值解析成一个整型数组" class="headerlink" title="将 JSON 对象中的某属性值解析成一个整型数组"></a>将 JSON 对象中的某属性值解析成一个整型数组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] xRange = regionObject.getJSONArray(<span class="string">&quot;xRange&quot;</span>).toList().stream().mapToInt(o -&gt; Integer.parseInt(o.toString())).toArray();</span><br></pre></td></tr></table></figure>
-
-<p><code>regionObject</code> 是一个 JSON 对象，<code>getJSONArray(&quot;xRange&quot;)</code> 将返回一个包含 JSON 数组的对象。我们可以通过调用 <code>toList()</code> 方法将这个 JSON 数组转换为 Java 中的 <code>List</code> 类型。</p>
-<p>接着，我们使用 Java 8 中的流式编程 API 来对这个列表进行操作，其中 <code>mapToInt(o -&gt; Integer.parseInt(o.toString()))</code> 是一个映射函数，将列表中的每个元素转换成一个整型。具体来说，这个函数首先使用 <code>toString()</code> 方法将列表中的元素转换成一个字符串，然后再使用 <code>Integer.parseInt()</code> 方法将字符串解析成整型。这样，我们就得到了一个包含整型数据的流。</p>
-<p>最后，我们调用 <code>toArray()</code> 方法将这个流转换成一个整型数组，存储在 <code>xRange</code> 变量中。这个数组包含了 JSON 对象中 <code>&quot;xRange&quot;</code> 属性对应的所有整型值。</p>
-<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>将 JSON 对象中的字符串类型的属性值转换成一个 <code>java.util.Date</code> 对象。</p>
-<p> JSON 对象：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jsonCopy code&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="string">&quot;birthDate&quot;</span>: <span class="string">&quot;1990-01-01&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>将 <code>&quot;birthDate&quot;</code> 属性值解析成一个 <code>java.util.Date</code> 对象。可以使用 <code>java.text.SimpleDateFormat</code> 类将字符串转换成日期对象。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">javaCopy codeimport java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">// 假设 jsonStr 是一个包含上述 JSON 对象的字符串</span><br><span class="line">JSONObject jsonObj = new JSONObject(jsonStr);</span><br><span class="line"></span><br><span class="line">// 从 json 中获取 birthDate 属性值</span><br><span class="line">String birthDateStr = jsonObj.getString(&quot;birthDate&quot;);</span><br><span class="line"></span><br><span class="line">// 将 birthDateStr 转换为 Date 对象</span><br><span class="line">SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">Date birthDate = dateFormat.parse(birthDateStr);</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>JSONObject.getString(String)</code> 方法获取了 <code>&quot;birthDate&quot;</code> 属性的字符串值，然后用 <code>SimpleDateFormat.parse(String)</code> 方法将字符串转换为 <code>Date</code> 对象。这里需要指定日期格式，这里使用了 <code>&quot;yyyy-MM-dd&quot;</code>，与 JSON 字符串中日期格式相匹配。</p>
-</blockquote>
-
+                <h3 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h3><h5 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h5><p>蓝色部分是Mave，一个项目管理工具。</p>
+<p>将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。</p>
+<p>管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。</p>
+<p><img src="/..%5Cpostot%5C23-05-04-1.png" srcset="/img/loading.gif" lazyload alt="1665027727152"></p>
+<h5 id="解决了什么"><a href="#解决了什么" class="headerlink" title="解决了什么"></a>解决了什么</h5><p>统一了Java项目的目录结构；</p>
+<p>方便了项目的编写、编译、测试、打包等</p>
+<p>解决了jar包冲突等问题；</p>
+<h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>下载地址： <a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">Maven – Download Apache Maven</a> </p>
+<p>点击<code>Download</code> 在<code>Link</code>一列中选择Window版下载，解压既可</p>
+<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><h3 id="基础概念！"><a href="#基础概念！" class="headerlink" title="基础概念！"></a>基础概念！</h3><h3 id="创建Maven项目！"><a href="#创建Maven项目！" class="headerlink" title="创建Maven项目！"></a>创建Maven项目！</h3><h3 id="依赖管理！"><a href="#依赖管理！" class="headerlink" title="依赖管理！"></a>依赖管理！</h3><h3 id="生命周期和插件"><a href="#生命周期和插件" class="headerlink" title="生命周期和插件"></a>生命周期和插件</h3>
                 
               </div>
             
@@ -301,7 +297,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java/">#Java</a>
+        <a href="/tags/JavaMaven/">#JavaMaven</a>
       
     </div>
   
@@ -313,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java中一些函数的解读</div>
-      <div>http://example.com/2023/04/23/Java中一些函数的解读/</div>
+      <div>Maven-1-基础</div>
+      <div>http://example.com/2023/05/04/Maven-1-基础/</div>
     </div>
     <div class="license-meta">
       
@@ -326,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月23日</div>
+          <div>2023年5月4日</div>
         </div>
       
       
@@ -358,9 +354,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/25/Vue-3-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8C%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7/" title="Vue-3-计算属性和监听属性">
+                      <a href="/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/" title="JavaFX">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vue-3-计算属性和监听属性</span>
+                        <span class="hidden-mobile">JavaFX</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -368,8 +364,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/19/CSS%E5%B8%83%E5%B1%80/" title="CSS布局">
-                        <span class="hidden-mobile">CSS布局</span>
+                      <a href="/2023/04/29/Linux%E7%AC%94%E8%AE%B0/" title="Linux笔记">
+                        <span class="hidden-mobile">Linux笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -16,22 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="目录将 JSON 对象中的某属性值解析成一个整型数组1int[] xRange &#x3D; regionObject.getJSONArray(&quot;xRange&quot;).toList().stream().mapToInt(o -&gt; Integer.parseInt(o.toString())).toArray();  regionObject 是一个 JSON 对象，getJSON">
+    <meta name="description" content="JDK_17+Maven +JavaFX_13构建项目，启动时缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序 解决方法：在启动类内写的JavaFX代码不能直接运行，需要在Java下创建继承自Application的App类，创建启动方法，在Main类下启动运行App类内的启动方法： App类： 123456789101112131415161718public class App">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中一些函数的解读">
-<meta property="og:url" content="http://example.com/2023/04/23/Java%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A3%E8%AF%BB/index.html">
+<meta property="og:title" content="JavaFX-2-纠错笔记">
+<meta property="og:url" content="http://example.com/2023/05/08/javaFX-2-%E7%BA%A0%E9%94%99%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="目录将 JSON 对象中的某属性值解析成一个整型数组1int[] xRange &#x3D; regionObject.getJSONArray(&quot;xRange&quot;).toList().stream().mapToInt(o -&gt; Integer.parseInt(o.toString())).toArray();  regionObject 是一个 JSON 对象，getJSON">
+<meta property="og:description" content="JDK_17+Maven +JavaFX_13构建项目，启动时缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序 解决方法：在启动类内写的JavaFX代码不能直接运行，需要在Java下创建继承自Application的App类，创建启动方法，在Main类下启动运行App类内的启动方法： App类： 123456789101112131415161718public class App">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-23T08:59:14.479Z">
+<meta property="article:published_time" content="2023-05-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-16T08:26:27.331Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JavaFX">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Java中一些函数的解读 - Hexo</title>
+  <title>JavaFX-2-纠错笔记 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Java中一些函数的解读"></span>
+            <span id="subtitle" data-typed-text="JavaFX-2-纠错笔记"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-23 00:00" pubdate>
-          2023年4月23日 凌晨
+        <time datetime="2023-05-08 00:00" pubdate>
+          2023年5月8日 凌晨
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.2k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          12 分钟
+          11 分钟
         
       </span>
     
@@ -269,25 +269,32 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Java中一些函数的解读</h1>
+            <h1 style="display: none">JavaFX-2-纠错笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <blockquote>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h4 id="将-JSON-对象中的某属性值解析成一个整型数组"><a href="#将-JSON-对象中的某属性值解析成一个整型数组" class="headerlink" title="将 JSON 对象中的某属性值解析成一个整型数组"></a>将 JSON 对象中的某属性值解析成一个整型数组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] xRange = regionObject.getJSONArray(<span class="string">&quot;xRange&quot;</span>).toList().stream().mapToInt(o -&gt; Integer.parseInt(o.toString())).toArray();</span><br></pre></td></tr></table></figure>
+                <h3 id="JDK-17-Maven-JavaFX-13"><a href="#JDK-17-Maven-JavaFX-13" class="headerlink" title="JDK_17+Maven +JavaFX_13"></a>JDK_17+Maven +JavaFX_13</h3><h4 id="构建项目，启动时"><a href="#构建项目，启动时" class="headerlink" title="构建项目，启动时"></a>构建项目，启动时</h4><h5 id="缺少-JavaFX-运行时组件-需要使用该组件来运行此应用程序"><a href="#缺少-JavaFX-运行时组件-需要使用该组件来运行此应用程序" class="headerlink" title="缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序"></a>缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序</h5><blockquote>
+<p>解决方法：在启动类内写的JavaFX代码不能直接运行，需要在Java下创建继承自Application的App类，创建启动方法，在Main类下启动运行App类内的启动方法：</p>
+<p>App类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Application</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        launch();<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">(Stage stage)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>       	Parent root;<br>        <span class="hljs-comment">//省略创建根节点，创建子节点，加入根节点</span><br>        <br>        <span class="hljs-type">Scene</span> <span class="hljs-variable">scene</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>(root);<br><br>        stage.setTitle(<span class="hljs-string">&quot;Login&quot;</span>);<br>        stage.setScene(scene);<br>        stage.show();<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><code>regionObject</code> 是一个 JSON 对象，<code>getJSONArray(&quot;xRange&quot;)</code> 将返回一个包含 JSON 数组的对象。我们可以通过调用 <code>toList()</code> 方法将这个 JSON 数组转换为 Java 中的 <code>List</code> 类型。</p>
-<p>接着，我们使用 Java 8 中的流式编程 API 来对这个列表进行操作，其中 <code>mapToInt(o -&gt; Integer.parseInt(o.toString()))</code> 是一个映射函数，将列表中的每个元素转换成一个整型。具体来说，这个函数首先使用 <code>toString()</code> 方法将列表中的元素转换成一个字符串，然后再使用 <code>Integer.parseInt()</code> 方法将字符串解析成整型。这样，我们就得到了一个包含整型数据的流。</p>
-<p>最后，我们调用 <code>toArray()</code> 方法将这个流转换成一个整型数组，存储在 <code>xRange</code> 变量中。这个数组包含了 JSON 对象中 <code>&quot;xRange&quot;</code> 属性对应的所有整型值。</p>
-<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>将 JSON 对象中的字符串类型的属性值转换成一个 <code>java.util.Date</code> 对象。</p>
-<p> JSON 对象：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jsonCopy code&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span>: <span class="string">&quot;Alice&quot;</span>,</span><br><span class="line">  <span class="string">&quot;birthDate&quot;</span>: <span class="string">&quot;1990-01-01&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>将 <code>&quot;birthDate&quot;</code> 属性值解析成一个 <code>java.util.Date</code> 对象。可以使用 <code>java.text.SimpleDateFormat</code> 类将字符串转换成日期对象。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">javaCopy codeimport java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line"></span><br><span class="line">// 假设 jsonStr 是一个包含上述 JSON 对象的字符串</span><br><span class="line">JSONObject jsonObj = new JSONObject(jsonStr);</span><br><span class="line"></span><br><span class="line">// 从 json 中获取 birthDate 属性值</span><br><span class="line">String birthDateStr = jsonObj.getString(&quot;birthDate&quot;);</span><br><span class="line"></span><br><span class="line">// 将 birthDateStr 转换为 Date 对象</span><br><span class="line">SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">Date birthDate = dateFormat.parse(birthDateStr);</span><br></pre></td></tr></table></figure>
-
-<p>使用 <code>JSONObject.getString(String)</code> 方法获取了 <code>&quot;birthDate&quot;</code> 属性的字符串值，然后用 <code>SimpleDateFormat.parse(String)</code> 方法将字符串转换为 <code>Date</code> 对象。这里需要指定日期格式，这里使用了 <code>&quot;yyyy-MM-dd&quot;</code>，与 JSON 字符串中日期格式相匹配。</p>
+<p>Main类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        App.main(args);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="Location-is-required-读取不到fxml路径-，成功读取后警告"><a href="#Location-is-required-读取不到fxml路径-，成功读取后警告" class="headerlink" title="Location is required(读取不到fxml路径)，成功读取后警告"></a>Location is required(读取不到fxml路径)，成功读取后警告</h5><blockquote>
+<p>解决方法：在Maven项目中，fxml文件得放置在java目录下的resources资源目录下才能被读取</p>
+<p>读取方式：</p>
+<p><code>Parent root = FXMLLoader.load(getClass().getResource(&quot;/root1.fxml&quot;));</code></p>
+<p>其中<code>&quot;/root1.fxml&quot;</code>是相对resources资源目录的相对路径</p>
+<p>获取资源(某文件&#x2F;文件夹)路径通用方式：</p>
+<p><code>String basePath=getClass().getResource(&quot;/img/direction&quot;).toExternalForm();</code></p>
+<p>其中<code>&quot;/img/direction&quot;</code>是相对resources资源目录的相对路径，既resources目录下img目录下的direction文件夹路径</p>
+<p>成功读取后小插曲： Loading FXML document with JavaFX API of version 13 by JavaFX runtime of version 10 </p>
+<p>原因： 简单来说是maven配置的javafx版本和fxml文件声明的版本不一致</p>
+<p>解决：</p>
+<p>将fxml文件中<code>xmlns=&quot;http://javafx.com/javafx/10</code></p>
+<p>修改为<code>xmlns=&quot;http://javafx.com/javafx/13</code>和maven配置的javafx版本一致</p>
 </blockquote>
 
                 
@@ -301,7 +308,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java/">#Java</a>
+        <a href="/tags/JavaFX/">#JavaFX</a>
       
     </div>
   
@@ -313,8 +320,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Java中一些函数的解读</div>
-      <div>http://example.com/2023/04/23/Java中一些函数的解读/</div>
+      <div>JavaFX-2-纠错笔记</div>
+      <div>http://example.com/2023/05/08/javaFX-2-纠错笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -326,7 +333,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月23日</div>
+          <div>2023年5月8日</div>
         </div>
       
       
@@ -358,9 +365,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/25/Vue-3-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8C%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7/" title="Vue-3-计算属性和监听属性">
+                      <a href="/2023/05/13/JavaFX-3-%E7%BB%83%E4%B9%A0/" title="JavaFX-3-练习">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vue-3-计算属性和监听属性</span>
+                        <span class="hidden-mobile">JavaFX-3-练习</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -368,8 +375,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/19/CSS%E5%B8%83%E5%B1%80/" title="CSS布局">
-                        <span class="hidden-mobile">CSS布局</span>
+                      <a href="/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/" title="JavaFX">
+                        <span class="hidden-mobile">JavaFX</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
