@@ -16,24 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Maven 简介是什么蓝色部分是Mave，一个项目管理工具。 将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。 管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。  解决了什么统一了Java项目的目录结构； 方便了项目的编写、编译、测试、打包等 解决了jar包冲突等问题； 下载与安装下载下载地址： Maven – Do">
+    <meta name="description" content="某模块缺失报错： 12node:internal&#x2F;modules&#x2F;cjs&#x2F;loader:936 throw err;  说明： 我是用在unit1文件夹下打开控制台通过node my.js运行下面js文件夹下的my.js文件的报错 解决： 在js文件夹下打开控制台，解决；其实就是node找不到你要运行的my.js文件，所以报错模块缺失 函数找不到报错： 1[某函数名] is not a funct">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven-1-基础">
-<meta property="og:url" content="http://example.com/2023/05/04/Maven-1-%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="JavaStript-2-纠错笔记">
+<meta property="og:url" content="http://example.com/2023/06/04/JavaScript-2-%E7%BA%A0%E9%94%99%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Maven 简介是什么蓝色部分是Mave，一个项目管理工具。 将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。 管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。  解决了什么统一了Java项目的目录结构； 方便了项目的编写、编译、测试、打包等 解决了jar包冲突等问题； 下载与安装下载下载地址： Maven – Do">
+<meta property="og:description" content="某模块缺失报错： 12node:internal&#x2F;modules&#x2F;cjs&#x2F;loader:936 throw err;  说明： 我是用在unit1文件夹下打开控制台通过node my.js运行下面js文件夹下的my.js文件的报错 解决： 在js文件夹下打开控制台，解决；其实就是node找不到你要运行的my.js文件，所以报错模块缺失 函数找不到报错： 1[某函数名] is not a funct">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/..%5Cpostot%5C23-05-04-1.png">
-<meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-18T13:02:59.407Z">
+<meta property="article:published_time" content="2023-06-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-04T02:41:48.952Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="JavaMaven">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/..%5Cpostot%5C23-05-04-1.png">
   
   
   
-  <title>Maven-1-基础 - Hexo</title>
+  <title>JavaStript-2-纠错笔记 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Maven-1-基础"></span>
+            <span id="subtitle" data-typed-text="JavaStript-2-纠错笔记"></span>
           
         </div>
 
@@ -210,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-04 00:00" pubdate>
-          2023年5月4日 凌晨
+        <time datetime="2023-06-04 00:00" pubdate>
+          2023年6月4日 凌晨
         </time>
       </span>
     
@@ -222,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          269 字
+          1.1k 字
         
       </span>
     
@@ -233,7 +231,7 @@
         
         
         
-          3 分钟
+          10 分钟
         
       </span>
     
@@ -271,21 +269,33 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Maven-1-基础</h1>
+            <h1 style="display: none">JavaStript-2-纠错笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h3><h5 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h5><p>蓝色部分是Mave，一个项目管理工具。</p>
-<p>将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。</p>
-<p>管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。</p>
-<p><img src="/..%5Cpostot%5C23-05-04-1.png" srcset="/img/loading.gif" lazyload alt="1665027727152"></p>
-<h5 id="解决了什么"><a href="#解决了什么" class="headerlink" title="解决了什么"></a>解决了什么</h5><p>统一了Java项目的目录结构；</p>
-<p>方便了项目的编写、编译、测试、打包等</p>
-<p>解决了jar包冲突等问题；</p>
-<h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>下载地址： <a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">Maven – Download Apache Maven</a> </p>
-<p>点击<code>Download</code> 在<code>Link</code>一列中选择Window版下载，解压既可</p>
-<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><h3 id="创建Maven项目！"><a href="#创建Maven项目！" class="headerlink" title="创建Maven项目！"></a>创建Maven项目！</h3><h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><h3 id="生命周期和插件"><a href="#生命周期和插件" class="headerlink" title="生命周期和插件"></a>生命周期和插件</h3>
+                <h3 id="某模块缺失"><a href="#某模块缺失" class="headerlink" title="某模块缺失"></a>某模块缺失</h3><p>报错：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">node</span><span class="hljs-title">:internal</span>/modules/cjs/loader:<span class="hljs-number">936</span> <br>throw err;<br></code></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p>我是用在unit1文件夹下打开控制台通过node my.js运行下面js文件夹下的my.js文件的报错</p>
+<p>解决：</p>
+<p>在js文件夹下打开控制台，解决；其实就是node找不到你要运行的my.js文件，所以报错模块缺失</p>
+<h3 id="函数找不到"><a href="#函数找不到" class="headerlink" title="函数找不到"></a>函数找不到</h3><p>报错：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xquery">[某函数名] <span class="hljs-literal">is</span><span class="hljs-built_in"> not</span> a <span class="hljs-keyword">function</span><br></code></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p>最容易想到的就是没写这个函数，这样低级的失误很难出现。检查了确保自己确实写了一个函数。</p>
+<p>再想到变量声明和方法声明的顺序问题，如果方法中用到的某个变量没有被声明是不是会报这样的错误？</p>
+<p>解决：</p>
+<p>最后发现是原先的Object对象在后面覆写了，没有带上这个方法，所以导致方法不存在了。js中var声明的变量在后面一不小心就会重新覆盖，可能这也是多用let和contis的原因吧</p>
+<p>此外：</p>
+<p>探究一下说明中的提问，测试了一下，调用方法（方法中用到的没有声明的属性，会直接被创建，并加入到对象的属性中被管理），测试代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//测试1：</span><br><span class="hljs-keyword">var</span> person=&#123;<br>	<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;Lai&quot;</span>,<br>	<span class="hljs-attr">city</span>:<span class="hljs-string">&quot;GZ&quot;</span>,<br>	<span class="hljs-attr">changeAge</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params">newAge</span>)&#123;<br>		<span class="hljs-variable language_">this</span>.<span class="hljs-property">age</span>=newAge;<br>	&#125;<br>&#125;<br><br><span class="hljs-comment">//调用对象中自己编写的方法修改属性</span><br>person.<span class="hljs-title function_">changeAge</span>(<span class="hljs-number">21</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person);<br><br><span class="hljs-comment">/*输出</span><br><span class="hljs-comment">&#123; name: &#x27;Lai&#x27;, city: &#x27;GZ&#x27;, changeAge: [Function: changeAge], age: 21 &#125;</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-comment">//测试2</span><br><span class="hljs-keyword">var</span> person=&#123;<br>	<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;Lai&quot;</span>,<br>	<span class="hljs-attr">age</span>:<span class="hljs-number">23</span>,<br>	<span class="hljs-attr">city</span>:<span class="hljs-string">&quot;GZ&quot;</span>,<br>	<br>	<span class="hljs-attr">changeAge</span>:<span class="hljs-keyword">function</span>(<span class="hljs-params">newAge</span>)&#123;<br>		<span class="hljs-variable language_">this</span>.<span class="hljs-property">age</span>=newAge;<br>	&#125;<br>&#125;<br><br><span class="hljs-comment">//删除对象属性</span><br><span class="hljs-keyword">delete</span> person.<span class="hljs-property">age</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person);<br><span class="hljs-comment">//调用对象中自己编写的方法修改属性</span><br>person.<span class="hljs-title function_">changeAge</span>(<span class="hljs-number">21</span>);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(person.<span class="hljs-property">age</span>);<br><span class="hljs-comment">/*输出</span><br><span class="hljs-comment">&#123; name: &#x27;Lai&#x27;, city: &#x27;GZ&#x27;, changeAge: [Function: changeAge], age: 21 &#125;</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+
+
+
                 
               </div>
             
@@ -297,7 +307,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/JavaMaven/">#JavaMaven</a>
+        <a href="/tags/JavaScript/">#JavaScript</a>
       
     </div>
   
@@ -309,8 +319,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Maven-1-基础</div>
-      <div>http://example.com/2023/05/04/Maven-1-基础/</div>
+      <div>JavaStript-2-纠错笔记</div>
+      <div>http://example.com/2023/06/04/JavaScript-2-纠错笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -322,7 +332,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月4日</div>
+          <div>2023年6月4日</div>
         </div>
       
       
@@ -354,18 +364,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/" title="JavaFX">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaFX</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/29/Linux%E7%AC%94%E8%AE%B0/" title="Linux笔记">
-                        <span class="hidden-mobile">Linux笔记</span>
+                      <a href="/2023/06/03/JavaStript-1-%E7%AC%94%E8%AE%B0/" title="JavaStript-1-笔记">
+                        <span class="hidden-mobile">JavaStript-1-笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

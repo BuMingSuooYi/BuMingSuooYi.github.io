@@ -16,24 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Maven 简介是什么蓝色部分是Mave，一个项目管理工具。 将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。 管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。  解决了什么统一了Java项目的目录结构； 方便了项目的编写、编译、测试、打包等 解决了jar包冲突等问题； 下载与安装下载下载地址： Maven – Do">
+    <meta name="description" content="概述版本控制工具，分为本地版本控制、集中版本控制和分布版本控制。 常见版本控制工具： Git、SVN、CVS、VSS、TFS、Visual Studio Online等 SVN（集中）Git（分布）特点速度 简单设计 允许并行开发的分支 完全分布式 有能力高效管理 工作流程安装和常用工具 Git GUI：图形化界面工具 Git Bash：Git提供的命令行工具 基本命令配置相关Git配置文件都在安">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maven-1-基础">
-<meta property="og:url" content="http://example.com/2023/05/04/Maven-1-%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="Git-1-笔记">
+<meta property="og:url" content="http://example.com/2023/05/22/Git-1-%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Maven 简介是什么蓝色部分是Mave，一个项目管理工具。 将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。 管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。  解决了什么统一了Java项目的目录结构； 方便了项目的编写、编译、测试、打包等 解决了jar包冲突等问题； 下载与安装下载下载地址： Maven – Do">
+<meta property="og:description" content="概述版本控制工具，分为本地版本控制、集中版本控制和分布版本控制。 常见版本控制工具： Git、SVN、CVS、VSS、TFS、Visual Studio Online等 SVN（集中）Git（分布）特点速度 简单设计 允许并行开发的分支 完全分布式 有能力高效管理 工作流程安装和常用工具 Git GUI：图形化界面工具 Git Bash：Git提供的命令行工具 基本命令配置相关Git配置文件都在安">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/..%5Cpostot%5C23-05-04-1.png">
-<meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-18T13:02:59.407Z">
+<meta property="article:published_time" content="2023-05-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-05-22T07:56:27.179Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="JavaMaven">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/..%5Cpostot%5C23-05-04-1.png">
   
   
   
-  <title>Maven-1-基础 - Hexo</title>
+  <title>Git-1-笔记 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Maven-1-基础"></span>
+            <span id="subtitle" data-typed-text="Git-1-笔记"></span>
           
         </div>
 
@@ -210,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-04 00:00" pubdate>
-          2023年5月4日 凌晨
+        <time datetime="2023-05-22 00:00" pubdate>
+          2023年5月22日 凌晨
         </time>
       </span>
     
@@ -222,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          269 字
+          758 字
         
       </span>
     
@@ -233,7 +231,7 @@
         
         
         
-          3 分钟
+          7 分钟
         
       </span>
     
@@ -271,21 +269,52 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Maven-1-基础</h1>
+            <h1 style="display: none">Git-1-笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Maven-简介"><a href="#Maven-简介" class="headerlink" title="Maven 简介"></a>Maven 简介</h3><h5 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h5><p>蓝色部分是Mave，一个项目管理工具。</p>
-<p>将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。</p>
-<p>管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。</p>
-<p><img src="/..%5Cpostot%5C23-05-04-1.png" srcset="/img/loading.gif" lazyload alt="1665027727152"></p>
-<h5 id="解决了什么"><a href="#解决了什么" class="headerlink" title="解决了什么"></a>解决了什么</h5><p>统一了Java项目的目录结构；</p>
-<p>方便了项目的编写、编译、测试、打包等</p>
-<p>解决了jar包冲突等问题；</p>
-<h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>下载地址： <a target="_blank" rel="noopener" href="https://maven.apache.org/download.cgi">Maven – Download Apache Maven</a> </p>
-<p>点击<code>Download</code> 在<code>Link</code>一列中选择Window版下载，解压既可</p>
-<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><h3 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h3><h3 id="创建Maven项目！"><a href="#创建Maven项目！" class="headerlink" title="创建Maven项目！"></a>创建Maven项目！</h3><h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><h3 id="生命周期和插件"><a href="#生命周期和插件" class="headerlink" title="生命周期和插件"></a>生命周期和插件</h3>
+                <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>版本控制工具，分为本地版本控制、集中版本控制和分布版本控制。</p>
+<p>常见版本控制工具：</p>
+<p>Git、SVN、CVS、VSS、TFS、Visual Studio Online等</p>
+<h4 id="SVN（集中）"><a href="#SVN（集中）" class="headerlink" title="SVN（集中）"></a>SVN（集中）</h4><h4 id="Git（分布）"><a href="#Git（分布）" class="headerlink" title="Git（分布）"></a>Git（分布）</h4><h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><p>速度</p>
+<p>简单设计</p>
+<p>允许并行开发的分支</p>
+<p>完全分布式</p>
+<p>有能力高效管理</p>
+<h5 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h5><p>安装和常用工具</p>
+<p>Git GUI：图形化界面工具</p>
+<p>Git Bash：Git提供的命令行工具</p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><h4 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h4><p>Git配置文件都在安装目录下的\etc\gitconfig</p>
+<ol>
+<li><p>配置提交人信息</p>
+<ul>
+<li>设置用户信息</li>
+</ul>
+<p><code>git config --global user.name &quot;Ming&quot;</code></p>
+<p><code>git config --global user.email &quot;123@Ming.email&quot;</code></p>
+<ul>
+<li>查看配置信息</li>
+</ul>
+<p><code>git config --global user.name</code></p>
+<p><code>git config --global user.email</code></p>
+</li>
+<li><p>为常用命令配置别名，用alias命令（配置了没用…）</p>
+<p>在用户目录创建.bashrc文件，内容如下：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-comment">#用于输出git提交日志</span><br><span class="hljs-keyword">alias</span> git-log=&#x27;git log <span class="hljs-params">--pretty=oneline</span> <span class="hljs-params">--all</span> <span class="hljs-params">--graph</span> <span class="hljs-params">--abbrev-commit</span>&#x27;<br><span class="hljs-comment">#用于输出当前目录所有文件及基本信息</span><br><span class="hljs-keyword">alias</span> ll=&#x27;<span class="hljs-keyword">ls</span> -al&#x27;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>解决Git中文乱码问题</p>
+<ul>
+<li><p>在git执行</p>
+<p><code>git config --global core.quotepath false</code></p>
+<p>（ 设置Git在显示文件路径时不对路径中的非ASCII字符进行转义显示 ）</p>
+</li>
+<li><p>在${git_home}&#x2F;etc&#x2F;bash.bashrc文件最后两行加入</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">LANG</span>=<span class="hljs-string">&quot;zh_CN.UTF-8&quot;</span><br><span class="hljs-built_in">export</span> <span class="hljs-attribute">LC_ALL</span>=<span class="hljs-string">&quot;zh_CN.UTF-8&quot;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+
                 
               </div>
             
@@ -297,7 +326,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/JavaMaven/">#JavaMaven</a>
+        <a href="/tags/Git/">#Git</a>
       
     </div>
   
@@ -309,8 +338,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Maven-1-基础</div>
-      <div>http://example.com/2023/05/04/Maven-1-基础/</div>
+      <div>Git-1-笔记</div>
+      <div>http://example.com/2023/05/22/Git-1-笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -322,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月4日</div>
+          <div>2023年5月22日</div>
         </div>
       
       
@@ -354,9 +383,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/" title="JavaFX">
+                      <a href="/2023/05/23/Untitled%201/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaFX</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -364,8 +393,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/04/29/Linux%E7%AC%94%E8%AE%B0/" title="Linux笔记">
-                        <span class="hidden-mobile">Linux笔记</span>
+                      <a href="/2023/05/13/JavaFX-3-%E7%BB%83%E4%B9%A0/" title="JavaFX-3-练习">
+                        <span class="hidden-mobile">JavaFX-3-练习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

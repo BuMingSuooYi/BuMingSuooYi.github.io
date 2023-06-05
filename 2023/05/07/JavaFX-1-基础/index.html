@@ -24,7 +24,7 @@
 <meta property="og:description" content="开始  舞台 应用的窗口  幕布 窗口中的内容，可以放置树形结构的节点  组件 内容中放置的节点，比如按钮、图片、文本框等   三层结构 注意：在Java11之后，javafx不在jdk中，需要单独下载或者用maven项目引入。引入时参考文章： 用maven创建javafx项目 解决“错误: 缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序” - 小甲点点 - 博客园 (cnblo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-15T12:17:14.556Z">
+<meta property="article:modified_time" content="2023-05-20T02:46:25.764Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="JavaFX">
 <meta name="twitter:card" content="summary_large_image">
@@ -231,7 +231,7 @@
         
         
         
-          117 分钟
+          118 分钟
         
       </span>
     
@@ -493,7 +493,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        App.main(args);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h5 id="在Applicatin中操作controll控制器"><a href="#在Applicatin中操作controll控制器" class="headerlink" title="在Applicatin中操作controll控制器"></a>在Applicatin中操作controll控制器</h5><p>可以通过FXMLloader对象拿到fxml对应的控制器，从而控制控制器中的UI控件</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">FXMLLoader fxmlLoader=<span class="hljs-keyword">new</span> <span class="hljs-title class_">FXMLLoader</span>();<br>fxmlLoader.setLocation(getClass().getResource(<span class="hljs-string">&quot;/vo/Login.fxml&quot;</span>));<br>Connection connection=fxmlLoader.getController();<br></code></pre></td></tr></table></figure>
+<p><strong>注意：</strong> 控制器获取必须在new Scene(loadFXML(“fxml”))之后，即加载fxml文件之后还要还要创建场景，创建完场景才可以把控制器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">FXMLLoader fxmlLoader=<span class="hljs-keyword">new</span> <span class="hljs-title class_">FXMLLoader</span>();<br>fxmlLoader.setLocation(getClass().getResource(<span class="hljs-string">&quot;/vo/Login.fxml&quot;</span>));<br>Control control=fxmlLoader.getController();<br></code></pre></td></tr></table></figure>
 
 
 
