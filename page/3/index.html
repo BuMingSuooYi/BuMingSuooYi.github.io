@@ -1,8 +1,10 @@
+layout//整个网页结构的模板，用于生成网页的 HTML 内容
 
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
 
+// 用于生成 Hexo 主题中的 <head> 部分，包含了页面的元信息、样式表、脚本和其他需要插入到 <head> 的内容
 
 
 <head>
@@ -28,7 +30,8 @@
   
   <title>Hexo</title>
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+  // 用于引入和渲染主题所需的 CSS 样式表的 HTML 代码
+<link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
 
@@ -67,7 +70,8 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
+  // 用于在网页中添加网页分析代码的部分。它支持多种网页分析服务，并根据配置的选项加载相应的脚本
+
 
 
   
@@ -78,10 +82,12 @@
   
 
   <header>
-    
+    // 用于生成 Hexo 主题中的顶部区域，包括导航栏和横幅（Banner）
+
 
 <div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  header-navigation// 导航栏的HTML结构，用于创建一个响应式的导航栏
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Fluid</strong>
@@ -177,8 +183,12 @@
   </div>
 </nav>
 
-  
+  <!-- header-banner// 用于生成网站的横幅（Banner）部分 -->
 
+<!-- 定义了一些变量，这些变量会用于设置页面横幅的属性 -->
+
+
+<!-- 根据主题的配置判断是否启用横幅的视差效果，并动态添加属性parallax=true -->
 <div id="banner" class="banner" parallax=true
      style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
@@ -215,9 +225,11 @@
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
-                
+                //用于生成主页的内容??
 
 
+<!-- 使用page.posts.each循环遍历每篇文章，并生成对应的文章卡片使用page.posts.each循环遍历每篇文章，并生成对应的文章卡片 -->
+<!-- 
   <div class="row mx-auto index-card">
     
     
@@ -617,8 +629,235 @@
       </div>
     </article>
   </div>
+ -->
+
+<!-- 我自己的主页ejs，用来代替他的文章列表和卡片 -->
+
+<div class="article-list">
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>MyBatisPlus queryWrapper</h2>
+        <a href="/2022/11/10/MyBatisPlus%20queryWrapper/" target="_self"></a>
+        <p class="summary">方法</p>
+        <div class="article-meta">
+          <span class="date">2022-11-10</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
 
 
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Vue+SpringBoot-4（前后端交互）</h2>
+        <a href="/2022/10/08/Vue+SpringBoot-4(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/" target="_self"></a>
+        <p class="summary">前端引入ajax 1.下载ajax1npm install axios -S  2.在main.js文件中全局引入ajax123456// 引入axios,并将axios赋值给Vue的prototype的自定义格式参数$axios,// 这样可以防止在 xx.vue文件中调用axios出现 axios未定义错误,// 调用方法是在&lt;script&gt;中的export default&#12</p>
+        <div class="article-meta">
+          <span class="date">2022-10-08</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Vue+SpringBoot-3（后端）</h2>
+        <a href="/2022/10/06/Vue+SpringBoot-3%EF%BC%88%E5%90%8E%E7%AB%AF%EF%BC%89/" target="_self"></a>
+        <p class="summary">项目结构 创建项目结构文件夹dto：实体类，与数据库表映射 utils：工具类，与数据库表映射 Vo：用于构建不同数据的综合实体类、前端交互的数据、配置数据等 Controller： 控制层，接收前端的数据  constant： 配置与前端交互返回的数据提示和内容  Service：处理接收到的数据，主要用做功能代码 Mapper：Service-&gt;mapper，实现数据库的增删改查 con</p>
+        <div class="article-meta">
+          <span class="date">2022-10-06</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Vue+SpringBoot-2（前端）</h2>
+        <a href="/2022/10/05/Vue+SpringBoot-2%EF%BC%88%E5%89%8D%E7%AB%AF%EF%BC%89/" target="_self"></a>
+        <p class="summary">项目结构 这里直接用csdn一位博主（积极向上的十六）的内容了 vue cli2 vuecli2目录结构  重点部分 index.html——[主页]index.html如其他html一样，但一般只定义一个空的根节点，在main.js里面定义的实例将挂载在根节点下，内容都通过vue组件来填充  App.vue——[根组件]一个vue页面通常由三部分组成:模板(template)、js(script</p>
+        <div class="article-meta">
+          <span class="date">2022-10-05</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Vue+SpringBoot-1（准备）</h2>
+        <a href="/2022/10/03/Vue+SpringBoot-1%EF%BC%88%E5%87%86%E5%A4%87%EF%BC%89/" target="_self"></a>
+        <p class="summary">写在前面 HBuilder X写前端:Veu2（2.6.10） IDEA写后端：JDK1.8；Java8 SpringBoot（2.7.4） mybatisplus IDEA创建SpringBoot项目时添加依赖：SpringWeb JDBC API MyBatis Framework MySQL Driver Thymeleaf  尝试运行创建的前端 报错：（没记录到报错语句）通过查询，node</p>
+        <div class="article-meta">
+          <span class="date">2022-10-03</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>matlab-处理excel数据</h2>
+        <a href="/2022/09/29/matlab%20%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/" target="_self"></a>
+        <p class="summary">导入excel表格 1[NUM,TXT,RAW]=xlsread(&#x27;相对路径或绝对路径\neam.xlsx&#x27;,sheet_n);  其中NUM为读取的数字；TXT为读取的文本；RAW为全部信息（未被处理未被处理的信息） sheet_n可以为下面附表名称，也可以用1，2，3代表第几个附表 获得的NUM,TXT,RAW都是元胞数组，形式如下 [ {1} {‘aaa’} {‘aaaa</p>
+        <div class="article-meta">
+          <span class="date">2022-09-29</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>matlab-处理excel数据</h2>
+        <a href="/2022/09/29/matlab-2-%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/" target="_self"></a>
+        <p class="summary">导入excel表格 1[NUM,TXT,RAW]=xlsread(&#x27;相对路径或绝对路径\neam.xlsx&#x27;,sheet_n);  其中NUM为读取的数字；TXT为读取的文本；RAW为全部信息（未被处理未被处理的信息） sheet_n可以为下面附表名称，也可以用1，2，3代表第几个附表 获得的NUM,TXT,RAW都是元胞数组，形式如下 [ {1} {‘aaa’} {‘aaaa</p>
+        <div class="article-meta">
+          <span class="date">2022-09-29</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>matlab-线性规划</h2>
+        <a href="/2022/09/28/matlab%20%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" target="_self"></a>
+        <p class="summary">线性规划注意需要化为公式的标准格式（目标函数最小值、表达式约束&lt;形式等，详情见下） 一、线性规划公式：linprog(f,a,b,aeq,beq,lb,ub) f为目标函数系数（注意是最小值，求最大则在下面函数的f前和最终输出结果前加一个负号）a为约束不等式未知数的系数，多个不等式用封号隔开（注意是系数1未知数1+…&lt;&#x3D;常数，&gt;&#x3D;的需要两边添加负号变换过来）b</p>
+        <div class="article-meta">
+          <span class="date">2022-09-28</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>matlab-线性规划</h2>
+        <a href="/2022/09/28/matlab-3-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" target="_self"></a>
+        <p class="summary">线性规划注意需要化为公式的标准格式（目标函数最小值、表达式约束&lt;形式等，详情见下） 一、线性规划公式：linprog(f,a,b,aeq,beq,lb,ub) f为目标函数系数（注意是最小值，求最大则在下面函数的f前和最终输出结果前加一个负号）a为约束不等式未知数的系数，多个不等式用封号隔开（注意是系数1未知数1+…&lt;&#x3D;常数，&gt;&#x3D;的需要两边添加负号变换过来）b</p>
+        <div class="article-meta">
+          <span class="date">2022-09-28</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>matlab-基础</h2>
+        <a href="/2022/09/27/matlab%20%E5%9F%BA%E7%A1%80/" target="_self"></a>
+        <p class="summary">matlab 语法</p>
+        <div class="article-meta">
+          <span class="date">2022-09-27</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+// 用于生成分页导航栏，用于在多页内容中进行页面切换
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
@@ -642,7 +881,8 @@
     
 
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      // 用于搜索的模态框（Modal）。它定义了一个具有特定样式和交互功能的模态框，用于展示搜索相关的内容
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -669,7 +909,8 @@
   </main>
 
   <footer>
-    <div class="footer-inner">
+    // 用于渲染 Hexo 主题的页脚部分
+<div class="footer-inner">
   
     <div class="footer-content">
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
@@ -683,7 +924,8 @@
   </footer>
 
   <!-- Scripts -->
-  
+  用于加载和引入各种插件和脚本文件，并设置主题的启动项
+
   <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 

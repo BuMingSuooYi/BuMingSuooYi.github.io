@@ -1,8 +1,10 @@
+layout//整个网页结构的模板，用于生成网页的 HTML 内容
 
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
 
+// 用于生成 Hexo 主题中的 <head> 部分，包含了页面的元信息、样式表、脚本和其他需要插入到 <head> 的内容
 
 
 <head>
@@ -28,7 +30,8 @@
   
   <title>标签 - 储存 - Hexo</title>
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+  // 用于引入和渲染主题所需的 CSS 样式表的 HTML 代码
+<link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
 
@@ -67,7 +70,8 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
+  // 用于在网页中添加网页分析代码的部分。它支持多种网页分析服务，并根据配置的选项加载相应的脚本
+
 
 
   
@@ -78,10 +82,12 @@
   
 
   <header>
-    
+    // 用于生成 Hexo 主题中的顶部区域，包括导航栏和横幅（Banner）
+
 
 <div class="header-inner" style="height: 80vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  header-navigation// 导航栏的HTML结构，用于创建一个响应式的导航栏
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Fluid</strong>
@@ -177,8 +183,12 @@
   </div>
 </nav>
 
-  
+  <!-- header-banner// 用于生成网站的横幅（Banner）部分 -->
 
+<!-- 定义了一些变量，这些变量会用于设置页面横幅的属性 -->
+
+
+<!-- 根据主题的配置判断是否启用横幅的视差效果，并动态添加属性parallax=true -->
 <div id="banner" class="banner" parallax=true
      style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
@@ -217,6 +227,7 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
+// 应该是归档部分的代码
 <div class="list-group">
   <p class="h4">共计 1 篇文章</p>
   <hr>
@@ -233,6 +244,7 @@
   
 </div>
 
+// 用于生成分页导航栏，用于在多页内容中进行页面切换
 
 
 
@@ -251,7 +263,8 @@
     
 
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      // 用于搜索的模态框（Modal）。它定义了一个具有特定样式和交互功能的模态框，用于展示搜索相关的内容
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -278,7 +291,8 @@
   </main>
 
   <footer>
-    <div class="footer-inner">
+    // 用于渲染 Hexo 主题的页脚部分
+<div class="footer-inner">
   
     <div class="footer-content">
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
@@ -292,7 +306,8 @@
   </footer>
 
   <!-- Scripts -->
-  
+  用于加载和引入各种插件和脚本文件，并设置主题的启动项
+
   <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 

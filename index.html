@@ -1,8 +1,10 @@
+layout//整个网页结构的模板，用于生成网页的 HTML 内容
 
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
 
+// 用于生成 Hexo 主题中的 <head> 部分，包含了页面的元信息、样式表、脚本和其他需要插入到 <head> 的内容
 
 
 <head>
@@ -28,7 +30,8 @@
   
   <title>Hexo</title>
 
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+  // 用于引入和渲染主题所需的 CSS 样式表的 HTML 代码
+<link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
 
@@ -67,7 +70,8 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  
+  // 用于在网页中添加网页分析代码的部分。它支持多种网页分析服务，并根据配置的选项加载相应的脚本
+
 
 
   
@@ -78,10 +82,12 @@
   
 
   <header>
-    
+    // 用于生成 Hexo 主题中的顶部区域，包括导航栏和横幅（Banner）
+
 
 <div class="header-inner" style="height: 100vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  header-navigation// 导航栏的HTML结构，用于创建一个响应式的导航栏
+<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Fluid</strong>
@@ -177,8 +183,12 @@
   </div>
 </nav>
 
-  
+  <!-- header-banner// 用于生成网站的横幅（Banner）部分 -->
 
+<!-- 定义了一些变量，这些变量会用于设置页面横幅的属性 -->
+
+
+<!-- 根据主题的配置判断是否启用横幅的视差效果，并动态添加属性parallax=true -->
 <div id="banner" class="banner" parallax=true
      style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
@@ -215,9 +225,11 @@
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
-                
+                //用于生成主页的内容??
 
 
+<!-- 使用page.posts.each循环遍历每篇文章，并生成对应的文章卡片使用page.posts.each循环遍历每篇文章，并生成对应的文章卡片 -->
+<!-- 
   <div class="row mx-auto index-card">
     
     
@@ -617,8 +629,235 @@
       </div>
     </article>
   </div>
+ -->
+
+<!-- 我自己的主页ejs，用来代替他的文章列表和卡片 -->
+
+<div class="article-list">
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Spring家族-1-笔记</h2>
+        <a href="/2023/06/06/Spring%E5%AE%B6%E6%97%8F-1-%E7%AC%94%E8%AE%B0/" target="_self"></a>
+        <p class="summary">总览SpringSpring是轻量级的Java开发基础框架，提供了各种功能和组件来帮助开发Java应用程序，需要手动配置和管理各种组件和依赖关系 核心是IoC（控制反转）和AOP（面向切面编程），还提供了数据访问、事务管理、安全性、集成等。 Spring MVCSpring MVC是Spring框架的一个模块，用于构建基于MVC（模型-视图-控制器）设计模式的Web应用程序，基于Servlet技术</p>
+        <div class="article-meta">
+          <span class="date">2023-06-06</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
 
 
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>JavaStript-2-纠错笔记</h2>
+        <a href="/2023/06/04/JavaScript-2-%E7%BA%A0%E9%94%99%E7%AC%94%E8%AE%B0/" target="_self"></a>
+        <p class="summary">某模块缺失报错： 12node:internal/modules/cjs/loader:936 throw err;  说明： 我是用在unit1文件夹下打开控制台通过node my.js运行下面js文件夹下的my.js文件的报错 解决： 在js文件夹下打开控制台，解决；其实就是node找不到你要运行的my.js文件，所以报错模块缺失 函数找不到报错： 1[某函数名] is not a funct</p>
+        <div class="article-meta">
+          <span class="date">2023-06-04</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>JavaStript-1-笔记</h2>
+        <a href="/2023/06/03/JavaStript-1-%E7%AC%94%E8%AE%B0/" target="_self"></a>
+        <p class="summary">JavaScript概述是什么JavaScript是一种高级、解释型的脚本语言，不需要预编译，在浏览器中直接执行。主要用于在网页上实现交互和动态内容。 JavaScript最初是为了在网页上添加简单的交互功能而创建的，随着时间的推移，它发展成了一门功能强大的语言，可用于开发各种类型的应用，包括网页前端开发、后端服务器开发、移动应用开发、游戏开发等。 JavaScript特点：  客户端脚本语言：J</p>
+        <div class="article-meta">
+          <span class="date">2023-06-03</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Git-1-笔记</h2>
+        <a href="/2023/05/22/Git-1-%E7%AC%94%E8%AE%B0/" target="_self"></a>
+        <p class="summary">概述版本控制工具，分为本地版本控制、集中版本控制和分布版本控制。 常见版本控制工具： Git、SVN、CVS、VSS、TFS、Visual Studio Online等 SVN（集中）Git（分布）特点速度 简单设计 允许并行开发的分支 完全分布式 有能力高效管理 工作流程安装和常用工具 Git GUI：图形化界面工具 Git Bash：Git提供的命令行工具 基本命令配置相关Git配置文件都在安</p>
+        <div class="article-meta">
+          <span class="date">2023-05-22</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>JavaFX-3-练习</h2>
+        <a href="/2023/05/13/JavaFX-3-%E7%BB%83%E4%B9%A0/" target="_self"></a>
+        <p class="summary">B&#x2F;C体系结构 模拟实时公交效果 设计顺序图  此处重点是B&#x2F;C体系结构和JavaFX运用练习，为方便开发，公交路线数据静态写入后端，未建立数据库，且仅运用TCP网络通讯简单传输，未加密。 客户端代码BusStop类（数据类）12345678910111213141516package org.example;import java.io.Serializable;//公交站台</p>
+        <div class="article-meta">
+          <span class="date">2023-05-13</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>JavaFX-2-纠错笔记</h2>
+        <a href="/2023/05/08/javaFX-2-%E7%BA%A0%E9%94%99%E7%AC%94%E8%AE%B0/" target="_self"></a>
+        <p class="summary">JDK_17+Maven +JavaFX_13构建项目，启动时缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序 解决方法：在启动类内写的JavaFX代码不能直接运行，需要在Java下创建继承自Application的App类，创建启动方法，在Main类下启动运行App类内的启动方法： App类： 123456789101112131415161718public class App</p>
+        <div class="article-meta">
+          <span class="date">2023-05-08</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>JavaFX</h2>
+        <a href="/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/" target="_self"></a>
+        <p class="summary">开始  舞台 应用的窗口  幕布 窗口中的内容，可以放置树形结构的节点  组件 内容中放置的节点，比如按钮、图片、文本框等   三层结构 注意：在Java11之后，javafx不在jdk中，需要单独下载或者用maven项目引入。引入时参考文章： 用maven创建javafx项目 解决“错误: 缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序” - 小甲点点 - 博客园 (cnblo</p>
+        <div class="article-meta">
+          <span class="date">2023-05-07</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Maven-1-基础</h2>
+        <a href="/2023/05/04/Maven-1-%E5%9F%BA%E7%A1%80/" target="_self"></a>
+        <p class="summary">Maven 简介是什么蓝色部分是Mave，一个项目管理工具。 将项目视作对象来管理，并赋予构建生命周期，在生命周期的不同阶段通过插件来完成不同的事，有些插件会产生产物。 管理项目的依赖资源，可以配置仓库路径来下载、拉取、更新等操作来管理依赖。  解决了什么统一了Java项目的目录结构； 方便了项目的编写、编译、测试、打包等 解决了jar包冲突等问题； 下载与安装下载下载地址： Maven – Do</p>
+        <div class="article-meta">
+          <span class="date">2023-05-04</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Linux笔记</h2>
+        <a href="/2023/04/29/Linux%E7%AC%94%E8%AE%B0/" target="_self"></a>
+        <p class="summary">Linux 概述Linux内核给Linux系统提供主要内容，如硬件调度管理能力 Linux内核是免费开源的，任何人都可以查看和修改内核源码 Linux系统发行版在内核之上封装系统级应用程序，组合起来就称为Linux发行版，比较常用的linux发行版有：ubunty、CentOS 图形化和命令行的操作操作系统一般提供图形化和命令行形式来操作电脑，在window中图形化是主流，在Linux系统中命令行</p>
+        <div class="article-meta">
+          <span class="date">2023-04-29</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="article-card">
+    
+      
+      
+      <div class="article-content">
+        <h2>Vue-5-指令</h2>
+        <a href="/2023/04/26/Vue-5-%E6%8C%87%E4%BB%A4/" target="_self"></a>
+        <p class="summary">1.内置指令 Vue中的内置指令包括：  v-bind：用于绑定一个或多个属性值到表达式。 v-if&#x2F;v-else-if&#x2F;v-else：用于条件渲染，根据表达式的真假来显示或隐藏元素。 v-show：也用于条件渲染，但是不会删除元素，而是通过CSS样式控制显示与隐藏。 v-for：用于循环渲染列表数据。 v-on：用于绑定事件处理函数。 v-model：用于双向绑定表单元素和组</p>
+        <div class="article-meta">
+          <span class="date">2023-04-26</span>
+          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
+
+
+<span class="category-chains">
+  
+  
+</span>
+</span>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+// 用于生成分页导航栏，用于在多页内容中进行页面切换
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
@@ -642,7 +881,8 @@
     
 
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      // 用于搜索的模态框（Modal）。它定义了一个具有特定样式和交互功能的模态框，用于展示搜索相关的内容
+<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -669,7 +909,8 @@
   </main>
 
   <footer>
-    <div class="footer-inner">
+    // 用于渲染 Hexo 主题的页脚部分
+<div class="footer-inner">
   
     <div class="footer-content">
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
@@ -683,7 +924,8 @@
   </footer>
 
   <!-- Scripts -->
-  
+  用于加载和引入各种插件和脚本文件，并设置主题的启动项
+
   <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
