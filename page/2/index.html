@@ -1,10 +1,8 @@
-layout//整个网页结构的模板，用于生成网页的 HTML 内容
 
 
 <!DOCTYPE html>
 <html lang="zh-CN" data-default-color-scheme=auto>
 
-// 用于生成 Hexo 主题中的 <head> 部分，包含了页面的元信息、样式表、脚本和其他需要插入到 <head> 的内容
 
 
 <head>
@@ -30,8 +28,7 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
   
   <title>Hexo</title>
 
-  // 用于引入和渲染主题所需的 CSS 样式表的 HTML 代码
-<link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
 
@@ -70,8 +67,7 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-  // 用于在网页中添加网页分析代码的部分。它支持多种网页分析服务，并根据配置的选项加载相应的脚本
-
+  
 
 
   
@@ -82,12 +78,10 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
   
 
   <header>
-    // 用于生成 Hexo 主题中的顶部区域，包括导航栏和横幅（Banner）
-
+    
 
 <div class="header-inner" style="height: 100vh;">
-  header-navigation// 导航栏的HTML结构，用于创建一个响应式的导航栏
-<nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
       <strong>Fluid</strong>
@@ -183,12 +177,8 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
   </div>
 </nav>
 
-  <!-- header-banner// 用于生成网站的横幅（Banner）部分 -->
+  
 
-<!-- 定义了一些变量，这些变量会用于设置页面横幅的属性 -->
-
-
-<!-- 根据主题的配置判断是否启用横幅的视差效果，并动态添加属性parallax=true -->
 <div id="banner" class="banner" parallax=true
      style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
@@ -225,11 +215,9 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
-                //用于生成主页的内容??
+                
 
 
-<!-- 使用page.posts.each循环遍历每篇文章，并生成对应的文章卡片使用page.posts.each循环遍历每篇文章，并生成对应的文章卡片 -->
-<!-- 
   <div class="row mx-auto index-card">
     
     
@@ -629,235 +617,8 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
       </div>
     </article>
   </div>
- -->
-
-<!-- 我自己的主页ejs，用来代替他的文章列表和卡片 -->
-
-<div class="article-list">
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>Vue-2-事件</h2>
-        <a href="/2023/04/25/Vue-2-%E4%BA%8B%E4%BB%B6/" target="_self"></a>
-        <p class="summary">1.事件处理v-on v-on:clock=&quot;函数名&quot;可简写为@clock=&quot;函数名&quot; 函数写在vm的methods:{}内，原理是methods内的函数会备份到vm内(和data到_data一样)，但函数不需要做数据代理。 如果把函数写在data:{}内vm备份到_data后虽然有效，但备份到_data后会做数据代理(产生get,set方法)，加重vm的负</p>
-        <div class="article-meta">
-          <span class="date">2023-04-25</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
 
 
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>Vue-3-计算属性和监听属性</h2>
-        <a href="/2023/04/25/Vue-3-%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E5%92%8C%E7%9B%91%E5%90%AC%E5%B1%9E%E6%80%A7/" target="_self"></a>
-        <p class="summary">1.计算属性computed  要用的属性通过已有的属性计算得来  原理：底层借助Object.defineproperty方法提供的getter和setter  get函数什么时候会执行？ （1）初次读取时会执行一次 （2）当依赖的数据发生变化时会被再次调用  优势：和methods实现相比，内部有缓存机制（复用），效率更高  备注： （1）计算属性最终会出现在vm上，直接读取使用既可 （2）如</p>
-        <div class="article-meta">
-          <span class="date">2023-04-25</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>Java中一些函数的解读</h2>
-        <a href="/2023/04/23/Java%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%87%BD%E6%95%B0%E7%9A%84%E8%A7%A3%E8%AF%BB/" target="_self"></a>
-        <p class="summary">目录将 JSON 对象中的某属性值解析成一个整型数组1int[] xRange = regionObject.getJSONArray(&quot;xRange&quot;).toList().stream().mapToInt(o -&gt; Integer.parseInt(o.toString())).toArray();  regionObject 是一个 JSON 对象，getJSON</p>
-        <div class="article-meta">
-          <span class="date">2023-04-23</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>CSS布局</h2>
-        <a href="/2023/04/19/CSS%E5%B8%83%E5%B1%80/" target="_self"></a>
-        <p class="summary">HTML 基础标签和属性 常用标签&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;body&gt; &lt;div&gt;块级、&lt;p&gt;段落、&lt;h1~h6&gt;标题、&lt;a&gt;链接、&lt;img&gt;图片&lt;ul&gt;无序列表&lt;ol&gt;有序列表 常用属性id：给元素设置一个唯一的id标识符 class：给元素添加css</p>
-        <div class="article-meta">
-          <span class="date">2023-04-19</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>Hexo博客美化</h2>
-        <a href="/2023/04/17/Hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/" target="_self"></a>
-        <p class="summary">Hexo主题基本结构 .├── _config.yml			  主题的配置文件	├── languages				语言文件夹├── layout					    布局文件├── scripts						脚本文件启动时└── source						资源源文件 其中layout： layout.ejs   - 使用 EJSlayout.swig  - 使用 Swig 其中source：   CSS</p>
-        <div class="article-meta">
-          <span class="date">2023-04-17</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>Java多线程与进程</h2>
-        <a href="/2023/04/17/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E8%BF%9B%E7%A8%8B/" target="_self"></a>
-        <p class="summary">目录 进程和线程 线程的实现 线程的状态 线程的常用方法 线程的优先级 同步和死锁  线程和进程的区别 线程：是单独按顺序运行的控制流； 进程：执行中的程序； 一个进程最少包含一个线程，可以包含多个线程  线程的实现  继承Thread类  12345678910111213141516171819202122232425&gt;//一个构造函数，接受线程编号作为参数，并将该编号保存在实例变量 t</p>
-        <div class="article-meta">
-          <span class="date">2023-04-17</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>运筹学-运输问题</h2>
-        <a href="/2022/11/22/Untitled/" target="_self"></a>
-        <p class="summary">12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210</p>
-        <div class="article-meta">
-          <span class="date">2022-11-22</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>SOCKET编程（比特流模拟）实验设计</h2>
-        <a href="/2022/11/20/SOCKET%E7%BC%96%E7%A8%8B%EF%BC%88%E6%AF%94%E7%89%B9%E6%B5%81%E6%A8%A1%E6%8B%9F%EF%BC%89%E5%AE%9E%E9%AA%8C%E8%AE%BE%E8%AE%A1/" target="_self"></a>
-        <p class="summary">四、实验思路 （1）创建分享文件的过程 实验使用四台电脑，其中一台电脑作为Tracker服务器，其它三台电脑作为同等peer。当某台peer主机拥有可分享的文件时，将BT种子（按可分享文件生成）、标识符（表示分享）以数据报套接字形式（对应UDP协议）发送给Tracker服务器，Tracker服务器记录分享文件的BT种子和分享的主机IP地址，形成BT种子与分享方主机IP的BT-IP映射表。 （2）请</p>
-        <div class="article-meta">
-          <span class="date">2022-11-20</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>Python学着玩</h2>
-        <a href="/2022/11/12/Python%E5%AD%A6%E7%9D%80%E7%8E%A9/" target="_self"></a>
-        <p class="summary">其它 引入1import math  注释1234#当行&#x27;&#x27;&#x27;多行&#x27;&#x27;&#x27;  基本方法 输出 转义、换行 1234print(&#x27;输出了几个字&#x27;)print(&#x27;输出了几个字&#x27;*5)#格式化字符串print(&#x27;%d*%d=%2d&#x27; %(2,4,8),end=&#x27; &#x27;)</p>
-        <div class="article-meta">
-          <span class="date">2022-11-12</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-    <div class="article-card">
-    
-      
-      
-      <div class="article-content">
-        <h2>Java list的学习</h2>
-        <a href="/2022/11/10/Java%20List%E7%9A%84%E5%AD%A6%E4%B9%A0/" target="_self"></a>
-        <p class="summary">细节 ArrayList是List的实现 1List&lt;Integer&gt; list=new ArrayList&lt;&gt;();  上面一步我们创建了List对象list，但是list里面还是空， 不能 1list.set(0,1);  可以 1list.add(1)    ， ，  方法 . 提取TList列表中的a属性为一个list 123List&lt;T&gt; TList=</p>
-        <div class="article-meta">
-          <span class="date">2022-11-10</span>
-          <span class="category">// 生成 Hexo 主题中的分类链（category chain）部分的 HTML 代码
-
-
-<span class="category-chains">
-  
-  
-</span>
-</span>
-        </div>
-      </div>
-    </div>
-  
-</div>
-
-// 用于生成分页导航栏，用于在多页内容中进行页面切换
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
@@ -881,8 +642,7 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
     
 
     
-      // 用于搜索的模态框（Modal）。它定义了一个具有特定样式和交互功能的模态框，用于展示搜索相关的内容
-<div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -909,8 +669,7 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
   </main>
 
   <footer>
-    // 用于渲染 Hexo 主题的页脚部分
-<div class="footer-inner">
+    <div class="footer-inner">
   
     <div class="footer-content">
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
@@ -924,8 +683,7 @@ layout//整个网页结构的模板，用于生成网页的 HTML 内容
   </footer>
 
   <!-- Scripts -->
-  用于加载和引入各种插件和脚本文件，并设置主题的启动项
-
+  
   <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
