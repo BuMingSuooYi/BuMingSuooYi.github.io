@@ -1,280 +1,110 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
 
 
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="John Doe">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="开始  舞台 应用的窗口  幕布 窗口中的内容，可以放置树形结构的节点  组件 内容中放置的节点，比如按钮、图片、文本框等   三层结构 注意：在Java11之后，javafx不在jdk中，需要单独下载或者用maven项目引入。引入时参考文章： 用maven创建javafx项目 解决“错误: 缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序” - 小甲点点 - 博客园 (cnblo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JavaFX">
-<meta property="og:url" content="http://example.com/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="开始  舞台 应用的窗口  幕布 窗口中的内容，可以放置树形结构的节点  组件 内容中放置的节点，比如按钮、图片、文本框等   三层结构 注意：在Java11之后，javafx不在jdk中，需要单独下载或者用maven项目引入。引入时参考文章： 用maven创建javafx项目 解决“错误: 缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序” - 小甲点点 - 博客园 (cnblo">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-20T02:46:25.764Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="JavaFX">
-<meta name="twitter:card" content="summary_large_image">
-  
-  
-  
-  <title>JavaFX - Hexo</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+<html lang="zh-CN">
   
 
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>JavaFX |  LXH</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
 
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
 
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
 
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
 
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
-    }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-  
-
-
-  
-<meta name="generator" content="Hexo 6.2.0"></head>
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
 
 
 <body>
-  
-
-  <header>
+  <div id="app">
     
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-JavaFX-1-基础"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  JavaFX
+</h1>
+ 
 
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
-    </a>
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2023-05-06T16:00:00.000Z" itemprop="datePublished">2023-05-07</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">5k</span>
+        </span>
+    </span>
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                <span>首页</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                <span>关于</span>
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              <i class="iconfont icon-search"></i>
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
-              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
-            </a>
-          </li>
-        
-      </ul>
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">20 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-  </div>
-</nav>
+      
+    <div class="tocbot"></div>
+
+
+
 
   
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="JavaFX"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
-    
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-07 00:00" pubdate>
-          2023年5月7日 凌晨
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          14k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          118 分钟
-        
-      </span>
-    
-
-    
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">JavaFX</h1>
-            
-            
-              <div class="markdown-body">
-                
-                <h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><blockquote>
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><blockquote>
 <ol>
 <li><p>舞台</p>
 <p>应用的窗口</p>
@@ -289,7 +119,7 @@
 <p>三层结构</p>
 <p><em>注意</em>：在Java11之后，javafx不在jdk中，需要单独下载或者用maven项目引入。引入时参考文章： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/tomato190/articles/12353426.html">用maven创建javafx项目 解决“错误: 缺少 JavaFX 运行时组件, 需要使用该组件来运行此应用程序” - 小甲点点 - 博客园 (cnblogs.com)</a> </p>
 </blockquote>
-<h4 id="stage-舞台"><a href="#stage-舞台" class="headerlink" title="stage(舞台)"></a>stage(舞台)</h4><h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">setTitle</span><span class="hljs-params">(String title)</span></span>：设置窗口标题。<br><br><span class="hljs-function"><span class="hljs-title">setWidth</span><span class="hljs-params">(double width)</span></span> 和 <span class="hljs-built_in">setHeight</span>(double <span class="hljs-attribute">height</span>)：设置窗口的宽度和高度。<br><br><span class="hljs-function"><span class="hljs-title">setResizable</span><span class="hljs-params">(boolean resizable)</span></span>：设置窗口是否可以调整大小。<br><br><span class="hljs-function"><span class="hljs-title">setFullScreen</span><span class="hljs-params">(boolean value)</span></span>：设置窗口是否全屏显示。<br><br><span class="hljs-function"><span class="hljs-title">setIconified</span><span class="hljs-params">(boolean value)</span></span>：最小化窗口。<br><br><span class="hljs-function"><span class="hljs-title">centerOnScreen</span><span class="hljs-params">()</span></span>：将窗口居中显示在屏幕上。<br><br><span class="hljs-function"><span class="hljs-title">initStyle</span><span class="hljs-params">(StageStyle style)</span></span>：设置窗口的样式。<br><br><span class="hljs-function"><span class="hljs-title">show</span><span class="hljs-params">()</span></span>：显示窗口。<br><br><span class="hljs-function"><span class="hljs-title">close</span><span class="hljs-params">()</span></span>：关闭窗口。<br><br><span class="hljs-function"><span class="hljs-title">setScene</span><span class="hljs-params">(Scene scene)</span></span>：设置窗口的场景。<br><br><span class="hljs-function"><span class="hljs-title">setOnCloseRequest</span><span class="hljs-params">(EventHandler&lt;WindowEvent&gt; eventHandler)</span></span>：设置窗口关闭时的事件处理程序。<br><br><span class="hljs-attribute">icon</span>:设置图标<br>x,y:设置窗口出现坐标<br></code></pre></td></tr></table></figure>
+<h4 id="stage-舞台"><a href="#stage-舞台" class="headerlink" title="stage(舞台)"></a>stage(舞台)</h4><h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">setTitle(String title)：设置窗口标题。</span><br><span class="line"></span><br><span class="line">setWidth(double width) 和 setHeight(double height)：设置窗口的宽度和高度。</span><br><span class="line"></span><br><span class="line">setResizable(boolean resizable)：设置窗口是否可以调整大小。</span><br><span class="line"></span><br><span class="line">setFullScreen(boolean value)：设置窗口是否全屏显示。</span><br><span class="line"></span><br><span class="line">setIconified(boolean value)：最小化窗口。</span><br><span class="line"></span><br><span class="line">centerOnScreen()：将窗口居中显示在屏幕上。</span><br><span class="line"></span><br><span class="line">initStyle(StageStyle style)：设置窗口的样式。</span><br><span class="line"></span><br><span class="line">show()：显示窗口。</span><br><span class="line"></span><br><span class="line">close()：关闭窗口。</span><br><span class="line"></span><br><span class="line">setScene(Scene scene)：设置窗口的场景。</span><br><span class="line"></span><br><span class="line">setOnCloseRequest(EventHandler&lt;WindowEvent&gt; eventHandler)：设置窗口关闭时的事件处理程序。</span><br><span class="line"></span><br><span class="line">icon:设置图标</span><br><span class="line">x,y:设置窗口出现坐标</span><br></pre></td></tr></table></figure>
 
 <h5 id="stage样式"><a href="#stage样式" class="headerlink" title="stage样式"></a>stage样式</h5><p>用<code>stage.initStyle(StageStyle.DECORATED);</code>设置舞台样式，参数包含</p>
 <blockquote>
@@ -324,7 +154,7 @@
 </blockquote>
 <p>这些事件可以通过添加回调函数来处理相应的窗口事件。例如，可以用setOnCloseRequest方法添加一个回调函数，在用户点击关闭按钮或使用快捷键Alt+F4关闭窗口时调用回调函数进行想要的操作。</p>
 <h4 id="Scene-场景"><a href="#Scene-场景" class="headerlink" title="Scene(场景)"></a>Scene(场景)</h4><p>放置在舞台上的场景，舞台通过切换场景来切换不同UI内容</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//创建一个场景</span><br> <span class="hljs-type">BorderPane</span> <span class="hljs-variable">root2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BorderPane</span>();<br>        <span class="hljs-type">Label</span> <span class="hljs-variable">label</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Label</span>(<span class="hljs-string">&quot;This is Scene 2&quot;</span>);<br>        root2.setCenter(label);<br>        scene2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>(root2, <span class="hljs-number">800</span>, <span class="hljs-number">600</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个场景</span></span><br><span class="line"> <span class="type">BorderPane</span> <span class="variable">root2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BorderPane</span>();</span><br><span class="line">        <span class="type">Label</span> <span class="variable">label</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Label</span>(<span class="string">&quot;This is Scene 2&quot;</span>);</span><br><span class="line">        root2.setCenter(label);</span><br><span class="line">        scene2 = <span class="keyword">new</span> <span class="title class_">Scene</span>(root2, <span class="number">800</span>, <span class="number">600</span>);</span><br></pre></td></tr></table></figure>
 
 <p>可以该在场景内改变鼠标光标图案：</p>
 <p>通过<code> scene.setCursor(new ImageCursor(new Image(&quot;custom-cursor.png&quot;))); 来自定义鼠标光标图案</code> </p>
@@ -437,7 +267,7 @@
 <p><code>boolean isBound();</code></p>
 </li>
 <li><p>addListener()方法：用于向属性添加一个ChangeListener，当属性的值发生变化时会调用ChangeListener的changed()方法。（也就是监听）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">void</span> <span class="hljs-title function_">addListener</span><span class="hljs-params">(ChangeListener&lt;? <span class="hljs-built_in">super</span> T&gt; listener)</span>;<br><br><span class="hljs-comment">//使用：</span><br>UI控件.某属性.addListener( <span class="hljs-keyword">new</span> <span class="hljs-title class_">ChangeListener</span>&lt;Number&gt;()&#123;<br>	<span class="hljs-comment">//监听到变化后需要执行的操作</span><br>&#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">addListener</span><span class="params">(ChangeListener&lt;? <span class="built_in">super</span> T&gt; listener)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用：</span></span><br><span class="line">UI控件.某属性.addListener( <span class="keyword">new</span> <span class="title class_">ChangeListener</span>&lt;Number&gt;()&#123;</span><br><span class="line">	<span class="comment">//监听到变化后需要执行的操作</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>removeListener()方法：用于从属性中移除一个ChangeListener。</p>
 <p><code>void removeListener(ChangeListener&lt;? super T&gt; listener);</code></p>
@@ -455,17 +285,17 @@
 <li>功能性事件：UI的功能事件，如按钮的点击、单选多选的选择、滚轮等</li>
 </ul>
 <p>一个文本框读取拖拽文件路径的实现：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">        思路：</span><br><span class="hljs-comment">            创建一个文本框 TextField，设置为只读。</span><br><span class="hljs-comment">            给文本框添加拖拽事件监听器 setOnDragOver 和 setOnDragDropped，响应用户将文件拖拽到文本框的操作。</span><br><span class="hljs-comment">            在 setOnDragOver 中，如果拖拽进来的是文件，就允许将文件放置到文本框中。</span><br><span class="hljs-comment">            在 setOnDragDropped 中，首先获取所有拖拽进来的文件列表，然后取出第一个文件，将其路径设置为文本框的内容。</span><br><span class="hljs-comment">            最后，将创建的文本框加入一个 VBox 容器中，并将该容器作为根节点，创建一个 Scene 对象。将 Scene 对象设置到舞台上并显示出来。</span><br><span class="hljs-comment">         */</span><br><br>        <span class="hljs-comment">// 创建一个文本框</span><br>        <span class="hljs-type">TextField</span> <span class="hljs-variable">textField</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextField</span>();<br>        <span class="hljs-comment">// 设置文本框为只读</span><br>        textField.setEditable(<span class="hljs-literal">false</span>);<br><br>        <span class="hljs-comment">// 文本框拖拽事件发生时，检查拖拽的对象是否是文件，并将接受的事件类型设置为 COPY_OR_MOVE</span><br>        textField.setOnDragOver((DragEvent event) -&gt; &#123;<br>            <span class="hljs-keyword">if</span> (event.getGestureSource() != textField &amp;&amp; event.getDragboard().hasFiles()) &#123;<br>                <span class="hljs-comment">// 允许放置</span><br>                event.acceptTransferModes(TransferMode.COPY_OR_MOVE);<br>            &#125;<br>            event.consume();<br>        &#125;);<br><br>        <span class="hljs-comment">// 文本框拖拽事件结束时，获取拖拽板中的第一个文件路径，并将其显示在文本框中</span><br>        textField.setOnDragDropped((DragEvent event) -&gt; &#123;<br>            <span class="hljs-type">Dragboard</span> <span class="hljs-variable">db</span> <span class="hljs-operator">=</span> event.getDragboard();<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">success</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>            <span class="hljs-keyword">if</span> (db.hasFiles()) &#123;<br>                <span class="hljs-comment">// 获取所有拖拽进来的文件列表</span><br>                List&lt;File&gt; files = db.getFiles();<br>                <span class="hljs-comment">// 获取第一个文件的路径</span><br>                <span class="hljs-type">String</span> <span class="hljs-variable">filePath</span> <span class="hljs-operator">=</span> files.get(<span class="hljs-number">0</span>).getPath();<br>                <span class="hljs-comment">// 将文件路径设置为文本框的内容</span><br>                textField.setText(filePath);<br>                success = <span class="hljs-literal">true</span>;<br>            &#125;<br>            <span class="hljs-comment">// 拖拽完成</span><br>            event.setDropCompleted(success);<br><br>            event.consume();<br>        &#125;);<br><br>        <span class="hljs-type">VBox</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">VBox</span>();<br>        root.getChildren().add(textField);<br><br>        <span class="hljs-type">Scene</span> <span class="hljs-variable">scene</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>(root, <span class="hljs-number">300</span>, <span class="hljs-number">250</span>);<br><br>        stage.setTitle(<span class="hljs-string">&quot;Drag And Drop Example&quot;</span>);<br>        stage.setScene(scene);<br>        stage.show();<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">        思路：</span></span><br><span class="line"><span class="comment">            创建一个文本框 TextField，设置为只读。</span></span><br><span class="line"><span class="comment">            给文本框添加拖拽事件监听器 setOnDragOver 和 setOnDragDropped，响应用户将文件拖拽到文本框的操作。</span></span><br><span class="line"><span class="comment">            在 setOnDragOver 中，如果拖拽进来的是文件，就允许将文件放置到文本框中。</span></span><br><span class="line"><span class="comment">            在 setOnDragDropped 中，首先获取所有拖拽进来的文件列表，然后取出第一个文件，将其路径设置为文本框的内容。</span></span><br><span class="line"><span class="comment">            最后，将创建的文本框加入一个 VBox 容器中，并将该容器作为根节点，创建一个 Scene 对象。将 Scene 对象设置到舞台上并显示出来。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一个文本框</span></span><br><span class="line">        <span class="type">TextField</span> <span class="variable">textField</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TextField</span>();</span><br><span class="line">        <span class="comment">// 设置文本框为只读</span></span><br><span class="line">        textField.setEditable(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 文本框拖拽事件发生时，检查拖拽的对象是否是文件，并将接受的事件类型设置为 COPY_OR_MOVE</span></span><br><span class="line">        textField.setOnDragOver((DragEvent event) -&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (event.getGestureSource() != textField &amp;&amp; event.getDragboard().hasFiles()) &#123;</span><br><span class="line">                <span class="comment">// 允许放置</span></span><br><span class="line">                event.acceptTransferModes(TransferMode.COPY_OR_MOVE);</span><br><span class="line">            &#125;</span><br><span class="line">            event.consume();</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 文本框拖拽事件结束时，获取拖拽板中的第一个文件路径，并将其显示在文本框中</span></span><br><span class="line">        textField.setOnDragDropped((DragEvent event) -&gt; &#123;</span><br><span class="line">            <span class="type">Dragboard</span> <span class="variable">db</span> <span class="operator">=</span> event.getDragboard();</span><br><span class="line">            <span class="type">boolean</span> <span class="variable">success</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (db.hasFiles()) &#123;</span><br><span class="line">                <span class="comment">// 获取所有拖拽进来的文件列表</span></span><br><span class="line">                List&lt;File&gt; files = db.getFiles();</span><br><span class="line">                <span class="comment">// 获取第一个文件的路径</span></span><br><span class="line">                <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> files.get(<span class="number">0</span>).getPath();</span><br><span class="line">                <span class="comment">// 将文件路径设置为文本框的内容</span></span><br><span class="line">                textField.setText(filePath);</span><br><span class="line">                success = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 拖拽完成</span></span><br><span class="line">            event.setDropCompleted(success);</span><br><span class="line"></span><br><span class="line">            event.consume();</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="type">VBox</span> <span class="variable">root</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">VBox</span>();</span><br><span class="line">        root.getChildren().add(textField);</span><br><span class="line"></span><br><span class="line">        <span class="type">Scene</span> <span class="variable">scene</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scene</span>(root, <span class="number">300</span>, <span class="number">250</span>);</span><br><span class="line"></span><br><span class="line">        stage.setTitle(<span class="string">&quot;Drag And Drop Example&quot;</span>);</span><br><span class="line">        stage.setScene(scene);</span><br><span class="line">        stage.show();</span><br></pre></td></tr></table></figure>
 
 <h4 id="颜色、主题、图片等"><a href="#颜色、主题、图片等" class="headerlink" title="颜色、主题、图片等"></a>颜色、主题、图片等</h4><h5 id="颜色Color"><a href="#颜色Color" class="headerlink" title="颜色Color"></a>颜色Color</h5><p> <code>Color(red,green,blue,透明度);</code>	分量范围0-255</p>
 <p><code>Color.rgb(red,green,blue);</code></p>
 <p><code>Color.web(&quot;#ADD8E6&quot;);</code>	#开头的十六进制参数，代表红绿蓝三个分量</p>
 <h5 id="字体Font"><a href="#字体Font" class="headerlink" title="字体Font"></a>字体Font</h5><p>可以直接引用系统自带字体，也可以下载字体到工程目录再引用</p>
 <p>示例，引用系统某字体<code>Font.font(&quot;系统字体&quot;, FontWeight.BOLD,大小)</code>	 FontWeight.BOLD参数为粗体</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">AnchorPane root=<span class="hljs-keyword">new</span> <span class="hljs-title class_">AnchorPane</span>();<br>        Label label=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Label</span>(<span class="hljs-string">&quot;JavaFX，你好！&quot;</span>);<br>        label.setFont(Font.font(<span class="hljs-string">&quot;华文隶属 常规&quot;</span>, FontWeight.BOLD,<span class="hljs-number">30</span>));<br><br>        root.getChildren().add(label);<br>        Scene scene=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>(root,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>);<br>        stage.setScene(scene);<br>        stage.show();<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">AnchorPane root=<span class="keyword">new</span> <span class="title class_">AnchorPane</span>();</span><br><span class="line">        Label label=<span class="keyword">new</span> <span class="title class_">Label</span>(<span class="string">&quot;JavaFX，你好！&quot;</span>);</span><br><span class="line">        label.setFont(Font.font(<span class="string">&quot;华文隶属 常规&quot;</span>, FontWeight.BOLD,<span class="number">30</span>));</span><br><span class="line"></span><br><span class="line">        root.getChildren().add(label);</span><br><span class="line">        Scene scene=<span class="keyword">new</span> <span class="title class_">Scene</span>(root,<span class="number">500</span>,<span class="number">500</span>);</span><br><span class="line">        stage.setScene(scene);</span><br><span class="line">        stage.show();</span><br></pre></td></tr></table></figure>
 
 <p>一些常用属性和方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 创建一个新的字体对象</span><br>        <span class="hljs-type">Font</span> <span class="hljs-variable">font</span> <span class="hljs-operator">=</span> Font.font(<span class="hljs-string">&quot;Arial&quot;</span>, FontWeight.BOLD, FontPosture.REGULAR, <span class="hljs-number">16</span>);<br><br>        <span class="hljs-comment">// 获取字体属性</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">fontFamily</span> <span class="hljs-operator">=</span> font.getFamily();<br>        <span class="hljs-type">double</span> <span class="hljs-variable">fontSize</span> <span class="hljs-operator">=</span> font.getSize();<br>        <span class="hljs-type">FontWeight</span> <span class="hljs-variable">fontWeight</span> <span class="hljs-operator">=</span> font.getWeight();<br>        <span class="hljs-type">FontPosture</span> <span class="hljs-variable">fontPosture</span> <span class="hljs-operator">=</span> font.getPosture();<br><br>        <span class="hljs-comment">// 输出字体属性</span><br>        System.out.println(<span class="hljs-string">&quot;Font Family: &quot;</span> + fontFamily);<br>        System.out.println(<span class="hljs-string">&quot;Font Size: &quot;</span> + fontSize);<br>        System.out.println(<span class="hljs-string">&quot;Font Weight: &quot;</span> + fontWeight);<br>        System.out.println(<span class="hljs-string">&quot;Font Posture: &quot;</span> + fontPosture);<br><br>        <span class="hljs-comment">// 获取字符串宽度和高度</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;Hello, World!&quot;</span>;<br>        <span class="hljs-type">double</span> <span class="hljs-variable">strWidth</span> <span class="hljs-operator">=</span> font.width(str);<br>        <span class="hljs-type">double</span> <span class="hljs-variable">strHeight</span> <span class="hljs-operator">=</span> font.height(str);<br><br>        <span class="hljs-comment">// 输出字符串宽度和高度</span><br>        System.out.println(<span class="hljs-string">&quot;String Width: &quot;</span> + strWidth);<br>        System.out.println(<span class="hljs-string">&quot;String Height: &quot;</span> + strHeight);<br>    &#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个新的字体对象</span></span><br><span class="line">        <span class="type">Font</span> <span class="variable">font</span> <span class="operator">=</span> Font.font(<span class="string">&quot;Arial&quot;</span>, FontWeight.BOLD, FontPosture.REGULAR, <span class="number">16</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取字体属性</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">fontFamily</span> <span class="operator">=</span> font.getFamily();</span><br><span class="line">        <span class="type">double</span> <span class="variable">fontSize</span> <span class="operator">=</span> font.getSize();</span><br><span class="line">        <span class="type">FontWeight</span> <span class="variable">fontWeight</span> <span class="operator">=</span> font.getWeight();</span><br><span class="line">        <span class="type">FontPosture</span> <span class="variable">fontPosture</span> <span class="operator">=</span> font.getPosture();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 输出字体属性</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Font Family: &quot;</span> + fontFamily);</span><br><span class="line">        System.out.println(<span class="string">&quot;Font Size: &quot;</span> + fontSize);</span><br><span class="line">        System.out.println(<span class="string">&quot;Font Weight: &quot;</span> + fontWeight);</span><br><span class="line">        System.out.println(<span class="string">&quot;Font Posture: &quot;</span> + fontPosture);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取字符串宽度和高度</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">        <span class="type">double</span> <span class="variable">strWidth</span> <span class="operator">=</span> font.width(str);</span><br><span class="line">        <span class="type">double</span> <span class="variable">strHeight</span> <span class="operator">=</span> font.height(str);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 输出字符串宽度和高度</span></span><br><span class="line">        System.out.println(<span class="string">&quot;String Width: &quot;</span> + strWidth);</span><br><span class="line">        System.out.println(<span class="string">&quot;String Height: &quot;</span> + strHeight);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="图片Image"><a href="#图片Image" class="headerlink" title="图片Image"></a>图片Image</h5><p>支持格式：BMP GIF JPEG PNG</p>
 <p>图片放置在ImageView中展示</p>
@@ -481,20 +311,20 @@
 <p>一个登录界面的示例：</p>
 <ol>
 <li><p>创建fxml文件，内容可以用Scence Buider生成</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;<br><br>&lt;?<span class="hljs-keyword">import</span> javafx.scene.control.*?&gt;<br>&lt;?<span class="hljs-keyword">import</span> javafx.scene.layout.*?&gt;<br><br>&lt;BorderPane maxHeight=<span class="hljs-string">&quot;-Infinity&quot;</span> maxWidth=<span class="hljs-string">&quot;-Infinity&quot;</span><br>            minHeight=<span class="hljs-string">&quot;-Infinity&quot;</span> minWidth=<span class="hljs-string">&quot;-Infinity&quot;</span><br>            prefHeight=<span class="hljs-string">&quot;400.0&quot;</span> prefWidth=<span class="hljs-string">&quot;600.0&quot;</span><br>            xmlns=<span class="hljs-string">&quot;http://javafx.com/javafx/13.0.0&quot;</span> xmlns:fx=<span class="hljs-string">&quot;http://javafx.com/fxml/1&quot;</span><br>            fx:controller=<span class="hljs-string">&quot;org.example.controller.LoginController&quot;</span>&gt;<br>    &lt;center&gt;<br>        &lt;VBox alignment=<span class="hljs-string">&quot;CENTER&quot;</span> spacing=<span class="hljs-string">&quot;20.0&quot;</span>&gt;<br>            &lt;Label text=<span class="hljs-string">&quot;Welcome to My App!&quot;</span> /&gt;<br>            &lt;Separator /&gt;<br>            &lt;VBox alignment=<span class="hljs-string">&quot;CENTER_LEFT&quot;</span> spacing=<span class="hljs-string">&quot;10.0&quot;</span>&gt;<br>                &lt;Label text=<span class="hljs-string">&quot;Username:&quot;</span> /&gt;<br>                &lt;TextField fx:id=<span class="hljs-string">&quot;usernameField&quot;</span> /&gt;<br>                &lt;Label fx:id=<span class="hljs-string">&quot;usernameHint&quot;</span> text=<span class="hljs-string">&quot;账户不存在&quot;</span> visible=<span class="hljs-string">&quot;false&quot;</span> opacity=<span class="hljs-string">&quot;0.5&quot;</span>/&gt;<br>                &lt;Label text=<span class="hljs-string">&quot;Password:&quot;</span> /&gt;<br>                &lt;PasswordField fx:id=<span class="hljs-string">&quot;passwordField&quot;</span> /&gt;<br>                &lt;Label fx:id=<span class="hljs-string">&quot;PasswordHint&quot;</span> text=<span class="hljs-string">&quot;密码错误&quot;</span> visible=<span class="hljs-string">&quot;false&quot;</span> opacity=<span class="hljs-string">&quot;0.5&quot;</span>/&gt;<br>                &lt;Button fx:id=<span class="hljs-string">&quot;loginButton&quot;</span> text=<span class="hljs-string">&quot;Login&quot;</span> onAction=<span class="hljs-string">&quot;#handleLogin&quot;</span>/&gt;<br>            &lt;/VBox&gt;<br>        &lt;/VBox&gt;<br>    &lt;/center&gt;<br>&lt;/BorderPane&gt;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="line"></span><br><span class="line">&lt;?<span class="keyword">import</span> javafx.scene.control.*?&gt;</span><br><span class="line">&lt;?<span class="keyword">import</span> javafx.scene.layout.*?&gt;</span><br><span class="line"></span><br><span class="line">&lt;BorderPane maxHeight=<span class="string">&quot;-Infinity&quot;</span> maxWidth=<span class="string">&quot;-Infinity&quot;</span></span><br><span class="line">            minHeight=<span class="string">&quot;-Infinity&quot;</span> minWidth=<span class="string">&quot;-Infinity&quot;</span></span><br><span class="line">            prefHeight=<span class="string">&quot;400.0&quot;</span> prefWidth=<span class="string">&quot;600.0&quot;</span></span><br><span class="line">            xmlns=<span class="string">&quot;http://javafx.com/javafx/13.0.0&quot;</span> xmlns:fx=<span class="string">&quot;http://javafx.com/fxml/1&quot;</span></span><br><span class="line">            fx:controller=<span class="string">&quot;org.example.controller.LoginController&quot;</span>&gt;</span><br><span class="line">    &lt;center&gt;</span><br><span class="line">        &lt;VBox alignment=<span class="string">&quot;CENTER&quot;</span> spacing=<span class="string">&quot;20.0&quot;</span>&gt;</span><br><span class="line">            &lt;Label text=<span class="string">&quot;Welcome to My App!&quot;</span> /&gt;</span><br><span class="line">            &lt;Separator /&gt;</span><br><span class="line">            &lt;VBox alignment=<span class="string">&quot;CENTER_LEFT&quot;</span> spacing=<span class="string">&quot;10.0&quot;</span>&gt;</span><br><span class="line">                &lt;Label text=<span class="string">&quot;Username:&quot;</span> /&gt;</span><br><span class="line">                &lt;TextField fx:id=<span class="string">&quot;usernameField&quot;</span> /&gt;</span><br><span class="line">                &lt;Label fx:id=<span class="string">&quot;usernameHint&quot;</span> text=<span class="string">&quot;账户不存在&quot;</span> visible=<span class="string">&quot;false&quot;</span> opacity=<span class="string">&quot;0.5&quot;</span>/&gt;</span><br><span class="line">                &lt;Label text=<span class="string">&quot;Password:&quot;</span> /&gt;</span><br><span class="line">                &lt;PasswordField fx:id=<span class="string">&quot;passwordField&quot;</span> /&gt;</span><br><span class="line">                &lt;Label fx:id=<span class="string">&quot;PasswordHint&quot;</span> text=<span class="string">&quot;密码错误&quot;</span> visible=<span class="string">&quot;false&quot;</span> opacity=<span class="string">&quot;0.5&quot;</span>/&gt;</span><br><span class="line">                &lt;Button fx:id=<span class="string">&quot;loginButton&quot;</span> text=<span class="string">&quot;Login&quot;</span> onAction=<span class="string">&quot;#handleLogin&quot;</span>/&gt;</span><br><span class="line">            &lt;/VBox&gt;</span><br><span class="line">        &lt;/VBox&gt;</span><br><span class="line">    &lt;/center&gt;</span><br><span class="line">&lt;/BorderPane&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建视图控制器</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.controller;<br><br><span class="hljs-keyword">import</span> javafx.event.ActionEvent;<br><span class="hljs-keyword">import</span> javafx.fxml.FXML;<br><span class="hljs-keyword">import</span> javafx.scene.control.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LoginController</span> &#123;<br><br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">private</span> TextField usernameField;<br><br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">private</span> PasswordField passwordField;<br><br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">private</span> Button loginButton;<br><br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">private</span> Label usernameHint;<br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">private</span> Label passwordHint;<br><br>    <span class="hljs-meta">@FXML</span><br>    <span class="hljs-keyword">void</span> <span class="hljs-title function_">handleLogin</span><span class="hljs-params">(ActionEvent event)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">username</span> <span class="hljs-operator">=</span> usernameField.getText();<br>        <span class="hljs-type">String</span> <span class="hljs-variable">password</span> <span class="hljs-operator">=</span> passwordField.getText();<br><br>        <span class="hljs-keyword">if</span> (username.equals(<span class="hljs-string">&quot;admin&quot;</span>) &amp;&amp; password.equals(<span class="hljs-string">&quot;123456&quot;</span>)) &#123;<br>            <span class="hljs-comment">// Credentials are valid, do something here</span><br>            System.out.println(<span class="hljs-string">&quot;假装登录，连接后端登录服务&quot;</span>);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;账户密码错误&quot;</span>);<br>            usernameHint.setVisible(<span class="hljs-literal">true</span>);<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-comment">//初始化函数</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">initialize</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-comment">//用于数据初始化，在上面@FXMLvoid handleLogin之后加载，可以覆盖按钮绑定等</span><br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javafx.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> javafx.fxml.FXML;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="keyword">private</span> TextField usernameField;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="keyword">private</span> PasswordField passwordField;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="keyword">private</span> Button loginButton;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="keyword">private</span> Label usernameHint;</span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="keyword">private</span> Label passwordHint;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@FXML</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">handleLogin</span><span class="params">(ActionEvent event)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> usernameField.getText();</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> passwordField.getText();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (username.equals(<span class="string">&quot;admin&quot;</span>) &amp;&amp; password.equals(<span class="string">&quot;123456&quot;</span>)) &#123;</span><br><span class="line">            <span class="comment">// Credentials are valid, do something here</span></span><br><span class="line">            System.out.println(<span class="string">&quot;假装登录，连接后端登录服务&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;账户密码错误&quot;</span>);</span><br><span class="line">            usernameHint.setVisible(<span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//初始化函数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">initialize</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//用于数据初始化，在上面@FXMLvoid handleLogin之后加载，可以覆盖按钮绑定等</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建JavaFX启动类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example;<br><span class="hljs-keyword">import</span> javafx.application.Application;<br><span class="hljs-keyword">import</span> javafx.fxml.FXMLLoader;<br><span class="hljs-keyword">import</span> javafx.scene.Parent;<br><span class="hljs-keyword">import</span> javafx.scene.Scene;<br><span class="hljs-keyword">import</span> javafx.stage.Stage;<br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Application</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        launch();<br>    &#125;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">(Stage stage)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        <span class="hljs-built_in">this</span>.stage=stage;<br>        <span class="hljs-type">Parent</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> FXMLLoader.load(getClass().getResource(<span class="hljs-string">&quot;/vo/Login.fxml&quot;</span>));<br>        <span class="hljs-type">Scene</span> <span class="hljs-variable">scene</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>(root);<br><br>        stage.setTitle(<span class="hljs-string">&quot;Login&quot;</span>);<br>        stage.setScene(scene);<br>        stage.show();<br>    &#125;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example;</span><br><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.fxml.FXMLLoader;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Parent;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_">Application</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        launch();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage stage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="built_in">this</span>.stage=stage;</span><br><span class="line">        <span class="type">Parent</span> <span class="variable">root</span> <span class="operator">=</span> FXMLLoader.load(getClass().getResource(<span class="string">&quot;/vo/Login.fxml&quot;</span>));</span><br><span class="line">        <span class="type">Scene</span> <span class="variable">scene</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scene</span>(root);</span><br><span class="line"></span><br><span class="line">        stage.setTitle(<span class="string">&quot;Login&quot;</span>);</span><br><span class="line">        stage.setScene(scene);</span><br><span class="line">        stage.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在Main中启动</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        App.main(args);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        App.main(args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h5 id="在Applicatin中操作controll控制器"><a href="#在Applicatin中操作controll控制器" class="headerlink" title="在Applicatin中操作controll控制器"></a>在Applicatin中操作controll控制器</h5><p>可以通过FXMLloader对象拿到fxml对应的控制器，从而控制控制器中的UI控件</p>
 <p><strong>注意：</strong> 控制器获取必须在new Scene(loadFXML(“fxml”))之后，即加载fxml文件之后还要还要创建场景，创建完场景才可以把控制器</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">FXMLLoader fxmlLoader=<span class="hljs-keyword">new</span> <span class="hljs-title class_">FXMLLoader</span>();<br>fxmlLoader.setLocation(getClass().getResource(<span class="hljs-string">&quot;/vo/Login.fxml&quot;</span>));<br>Control control=fxmlLoader.getController();<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FXMLLoader fxmlLoader=<span class="keyword">new</span> <span class="title class_">FXMLLoader</span>();</span><br><span class="line">fxmlLoader.setLocation(getClass().getResource(<span class="string">&quot;/vo/Login.fxml&quot;</span>));</span><br><span class="line">Control control=fxmlLoader.getController();</span><br></pre></td></tr></table></figure>
 
 
 
@@ -504,382 +334,516 @@
 <p>width和height属性：Canvas画布的宽度和高度，可以使用setWidth()和setHeight()方法进行设置。<br>graphicsContext2D属性：Canvas画布的GraphicsContext对象，用于绘制图形、文本等。<br>setOnMouseClicked()、setOnMouseDragged()等事件处理方法：Canvas画布可以响应鼠标事件，通过这些方法可以添加事件处理程序来实现交互效果。<br>setFill()、setStroke()等方法：设置填充颜色和轮廓颜色。<br>clearRect()方法：清除指定矩形区域的内容。<br>fillRect()、strokeRect()等方法：绘制矩形，并填充或描边。<br>moveTo()、lineTo()、quadraticCurveTo()等路径方法：用于绘制路径。<br>setFont()、fillText()等文本方法：设置字体样式和内容，并绘制文本。</p>
 </blockquote>
 <p>示例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Canvas</span> <span class="hljs-variable">canvas</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Canvas</span>(<span class="hljs-number">400</span>, <span class="hljs-number">400</span>);<br><span class="hljs-type">GraphicsContext</span> <span class="hljs-variable">gc</span> <span class="hljs-operator">=</span> canvas.getGraphicsContext2D();<br>gc.setFill(Color.GREEN);<br>gc.setStroke(Color.BLUE);<br>gc.fillRect(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>gc.strokeRect(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>);<br>gc.setFill(Color.RED);<br>gc.fillOval(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>);<br>gc.setFont(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Font</span>(<span class="hljs-string">&quot;Arial&quot;</span>, <span class="hljs-number">20</span>));<br>gc.fillText(<span class="hljs-string">&quot;Hello, World!&quot;</span>, <span class="hljs-number">150</span>, <span class="hljs-number">150</span>);<br>canvas.setOnMouseClicked(e -&gt; &#123;<br>    gc.clearRect(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, canvas.getWidth(), canvas.getHeight());<br>&#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Canvas</span> <span class="variable">canvas</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Canvas</span>(<span class="number">400</span>, <span class="number">400</span>);</span><br><span class="line"><span class="type">GraphicsContext</span> <span class="variable">gc</span> <span class="operator">=</span> canvas.getGraphicsContext2D();</span><br><span class="line">gc.setFill(Color.GREEN);</span><br><span class="line">gc.setStroke(Color.BLUE);</span><br><span class="line">gc.fillRect(<span class="number">50</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">gc.strokeRect(<span class="number">50</span>, <span class="number">50</span>, <span class="number">100</span>, <span class="number">100</span>);</span><br><span class="line">gc.setFill(Color.RED);</span><br><span class="line">gc.fillOval(<span class="number">200</span>, <span class="number">200</span>, <span class="number">50</span>, <span class="number">50</span>);</span><br><span class="line">gc.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;Arial&quot;</span>, <span class="number">20</span>));</span><br><span class="line">gc.fillText(<span class="string">&quot;Hello, World!&quot;</span>, <span class="number">150</span>, <span class="number">150</span>);</span><br><span class="line">canvas.setOnMouseClicked(e -&gt; &#123;</span><br><span class="line">    gc.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvas.getWidth(), canvas.getHeight());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h5 id="快照的应用"><a href="#快照的应用" class="headerlink" title="快照的应用"></a>快照的应用</h5><blockquote>
 <ol>
 <li>使用<code>Scene</code>对象的<code>snapshot</code>方法保存<code>Node</code>或<code>Parent</code>的快照。例如：</li>
 </ol>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">Copy</span> CodeWritableImage <span class="hljs-keyword">snapshot</span> = scene.<span class="hljs-keyword">snapshot</span>(<span class="hljs-keyword">null</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copy CodeWritableImage snapshot = scene.snapshot(null);</span><br></pre></td></tr></table></figure>
 
 <p>这将创建一个包含场景快照的 <code>WritableImage</code> 对象。</p>
 <ol start="2">
 <li>创建一个新的 <code>ImageView</code> 对象来显示该快照。例如：</li>
 </ol>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">Copy</span> CodeImageView imageView = <span class="hljs-built_in">new</span> ImageView(<span class="hljs-keyword">snapshot</span>);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copy CodeImageView imageView = new ImageView(snapshot);</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>将 <code>ImageView</code> 添加到 <code>Parent</code> 容器中。例如：</li>
 </ol>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">Copy</span> CodeparentContainer.getChildren().<span class="hljs-keyword">add</span>(imageView);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copy CodeparentContainer.getChildren().add(imageView);</span><br></pre></td></tr></table></figure>
 
 <p>这样可以将快照添加到场景中，以图片的形式显示出来,还可以结合画布，在画布中画出快照</p>
 <ol start="4">
 <li>如果需要在之后再次绘制该快照，只需将 <code>ImageView</code> 从容器中移除即可。例如：</li>
 </ol>
-<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs reasonml">Copy <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">CodeparentContainer</span>.</span></span>get<span class="hljs-constructor">Children()</span>.remove(imageView);<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Copy CodeparentContainer.getChildren().remove(imageView);</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h5 id="AnimationTimer类，刷新画布"><a href="#AnimationTimer类，刷新画布" class="headerlink" title="AnimationTimer类，刷新画布"></a>AnimationTimer类，刷新画布</h5><p>内置handle()方法，用于每次画布更新时调用</p>
 <p>a.start开启刷新</p>
 <p>示例：按键盘重画素材实现角色移动</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Application</span> &#123;<br>    <span class="hljs-type">double</span> rx=<span class="hljs-number">250</span>; <span class="hljs-type">double</span> ry=<span class="hljs-number">250</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        launch();<br>    &#125;<br>    <br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">start</span><span class="hljs-params">(Stage stage)</span> <span class="hljs-keyword">throws</span> Exception &#123;<br>        Canvas canvas=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Canvas</span>(<span class="hljs-number">500</span>,<span class="hljs-number">500</span>);<br>        GraphicsContext context= canvas.getGraphicsContext2D();<br><br>        Image r=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Image</span>(<span class="hljs-string">&quot;/img/1.png&quot;</span>);<br><br>        context.strokeLine(<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">300</span>,<span class="hljs-number">300</span>);<br>        context.drawImage(r,rx,ry);<br><br>        <span class="hljs-comment">//提供的刷新画布的类</span><br>        AnimationTimer animationTimer=<span class="hljs-keyword">new</span> <span class="hljs-title class_">AnimationTimer</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">handle</span><span class="hljs-params">(<span class="hljs-type">long</span> l)</span> &#123;<br>                context.clearRect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>);<br>                context.drawImage(r,rx,ry);<br>            &#125;<br>        &#125;;<br>        <span class="hljs-comment">//开启刷新</span><br>        animationTimer.start();<br><br>        AnchorPane parent=<span class="hljs-keyword">new</span> <span class="hljs-title class_">AnchorPane</span>();<br>        parent.getChildren().add(canvas);<br><br>        Scene scene=<span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>(parent,<span class="hljs-number">500</span>,<span class="hljs-number">500</span>);<br>        <span class="hljs-comment">//敲击键盘事件，场景</span><br>        scene.setOnKeyPressed(e-&gt;&#123;<br>            KeyCode keyCode=e.getCode();<br>            <span class="hljs-keyword">switch</span> (keyCode)&#123;<br>                <span class="hljs-keyword">case</span> UP :<br>                    ry=ry-<span class="hljs-number">10</span>;<br>                    System.out.println(ry);<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> DOWN:<br>                    ry=ry+<span class="hljs-number">10</span>;<br>                    System.out.println(ry);<br>            &#125;<br><span class="hljs-comment">//            context.drawImage(r,rx,ry);</span><br>        &#125;);<br>        stage.setScene(scene);<br>        stage.show();<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_">Application</span> &#123;</span><br><span class="line">    <span class="type">double</span> rx=<span class="number">250</span>; <span class="type">double</span> ry=<span class="number">250</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        launch();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage stage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        Canvas canvas=<span class="keyword">new</span> <span class="title class_">Canvas</span>(<span class="number">500</span>,<span class="number">500</span>);</span><br><span class="line">        GraphicsContext context= canvas.getGraphicsContext2D();</span><br><span class="line"></span><br><span class="line">        Image r=<span class="keyword">new</span> <span class="title class_">Image</span>(<span class="string">&quot;/img/1.png&quot;</span>);</span><br><span class="line"></span><br><span class="line">        context.strokeLine(<span class="number">100</span>,<span class="number">100</span>,<span class="number">300</span>,<span class="number">300</span>);</span><br><span class="line">        context.drawImage(r,rx,ry);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//提供的刷新画布的类</span></span><br><span class="line">        AnimationTimer animationTimer=<span class="keyword">new</span> <span class="title class_">AnimationTimer</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handle</span><span class="params">(<span class="type">long</span> l)</span> &#123;</span><br><span class="line">                context.clearRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">500</span>,<span class="number">500</span>);</span><br><span class="line">                context.drawImage(r,rx,ry);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">//开启刷新</span></span><br><span class="line">        animationTimer.start();</span><br><span class="line"></span><br><span class="line">        AnchorPane parent=<span class="keyword">new</span> <span class="title class_">AnchorPane</span>();</span><br><span class="line">        parent.getChildren().add(canvas);</span><br><span class="line"></span><br><span class="line">        Scene scene=<span class="keyword">new</span> <span class="title class_">Scene</span>(parent,<span class="number">500</span>,<span class="number">500</span>);</span><br><span class="line">        <span class="comment">//敲击键盘事件，场景</span></span><br><span class="line">        scene.setOnKeyPressed(e-&gt;&#123;</span><br><span class="line">            KeyCode keyCode=e.getCode();</span><br><span class="line">            <span class="keyword">switch</span> (keyCode)&#123;</span><br><span class="line">                <span class="keyword">case</span> UP :</span><br><span class="line">                    ry=ry-<span class="number">10</span>;</span><br><span class="line">                    System.out.println(ry);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> DOWN:</span><br><span class="line">                    ry=ry+<span class="number">10</span>;</span><br><span class="line">                    System.out.println(ry);</span><br><span class="line">            &#125;</span><br><span class="line"><span class="comment">//            context.drawImage(r,rx,ry);</span></span><br><span class="line">        &#125;);</span><br><span class="line">        stage.setScene(scene);</span><br><span class="line">        stage.show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
+ 
+      <!-- reward -->
       
-        <a href="/tags/JavaFX/">#JavaFX</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>JavaFX</div>
-      <div>http://example.com/2023/05/07/JavaFX-1-基础/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>John Doe</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2023年5月7日</div>
-        </div>
-      
-      
-      
-        <div class="license-meta-item">
-          <div>许可协议</div>
-          <div>
-            
-              
-              
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-by"></i>
-                  </span>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2023/05/08/javaFX-2-%E7%BA%A0%E9%94%99%E7%AC%94%E8%AE%B0/" title="JavaFX-2-纠错笔记">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaFX-2-纠错笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2023/05/04/Maven-1-%E5%9F%BA%E7%A1%80/" title="Maven-1-基础">
-                        <span class="hidden-mobile">Maven-1-基础</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
         </div>
       </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
       
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header">
-    <i class="iconfont icon-list"></i>
-    <span>目录</span>
-  </p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
     </div>
-  </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
 </div>
 
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2023/05/07/JavaFX-1-%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+    </div>
+</div>
 
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaFX/" rel="tag">JavaFX</a></li></ul>
 
+    </footer>
+  </div>
 
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
+   
+  <nav class="article-nav">
     
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      <a href="/2023/05/08/javaFX-2-%E7%BA%A0%E9%94%99%E7%AC%94%E8%AE%B0/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            JavaFX-2-纠错笔记
+          
+        </div>
       </a>
     
-
     
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+      <a href="/2023/05/04/Maven-1-%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Maven-1-基础</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2023
+        <i class="ri-heart-fill heart_icon"></i> LXH
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
     </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="LXH"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
   </div>
 </div>
-
     
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
 
-    
-  </main>
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
 
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
     </div>
-  
-  
-  
-  
+
 </div>
 
-  </footer>
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
 
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
 
-    window.tocbot.init(Object.assign({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      scrollSmooth    : true,
-      includeTitleTags: true,
-      headingsOffset  : -boardTop,
-    }, CONFIG.toc));
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
     }
+    viewer_init()
+</script> 
+<!-- MathJax -->
 
-    Fluid.events.registerRefreshCallback(function() {
-      if ('tocbot' in window) {
-        tocbot.refresh();
-        var toc = jQuery('#toc');
-        if (toc.length === 0 || !tocbot) {
-          return;
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
         }
-        if (toc.find('.toc-list-item').length > 0) {
-          toc.css('visibility', 'visible');
-        }
-      }
-    });
-  });
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
 </script>
 
 
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+    
+    
 
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('anchors' in window) {
-        anchors.removeAll();
-        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-        var res = [];
-        for (var item of el) {
-          res.push('.markdown-body > ' + item.trim());
-        }
-        if (CONFIG.anchorjs.placement === 'left') {
-          anchors.options.class = 'anchorjs-link-left';
-        }
-        anchors.add(res.join(', '));
-      }
-    });
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
+  </div>
 </body>
+
 </html>
