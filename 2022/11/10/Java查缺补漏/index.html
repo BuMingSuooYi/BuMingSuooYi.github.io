@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>Java list的学习 |  LXH</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java查缺补漏"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java list的学习
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/11/10/Java%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/" class="article-date">
+  <time datetime="2022-11-09T16:00:00.000Z" itemprop="datePublished">2022-11-10</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">8 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h3 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h3><h4 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h4><ol>
+<li><p>两种初始化的区别</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">String s1=<span class="string">&quot;123&quot;</span>;</span><br><span class="line">String s2=<span class="string">&quot;123&quot;</span>;</span><br><span class="line">String s3=<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;123&quot;</span>);</span><br><span class="line">System.out.println(s1==s2);</span><br><span class="line">System.out.println(s1==s3);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">String创建的字符串存储在公共池中，而 new 创建的字符串对象在堆上。</span></span><br><span class="line"><span class="comment">也就是String创建的字符串内容相同则是用引用共享空间，new 创建的字符串对象每个都是独立的</span></span><br><span class="line"><span class="comment">表现在上面输出结果为：</span></span><br><span class="line"><span class="comment">true</span></span><br><span class="line"><span class="comment">false</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>String、StringBuffer和StringBuilder</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//都用于处理字符串，但在性能、线程安全性和可变性上有不同</span><br><span class="line"></span><br><span class="line">String:</span><br><span class="line">不可变的，一旦创建，其内容就不能被修改。</span><br><span class="line">每次对字符串进行修改操作时，意味着创建新的字符串对象，原始字符串不变。</span><br><span class="line">由于不可变性，适用于不需要频繁修改字符串内容的场景，如存储常量或者字符串连接较少的情况。</span><br><span class="line"></span><br><span class="line">StringBuffer:</span><br><span class="line">可变的字符串序列，适用于需要频繁修改字符串的情况。</span><br><span class="line">线程安全，多个线程可以同时访问和修改同一个StringBuffer对象，这会带来额外的同步开销。</span><br><span class="line">由于线程安全性，StringBuffer性能相对较低，适用于多线程环境或者对线程安全要求较高的场景。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">StringBuilder:</span><br><span class="line">可变的字符串序列，适用于需要频繁修改字符串的情况。</span><br><span class="line">非线程安全的，不进行额外的同步操作。因此，StringBuilder的性能通常比StringBuffer更好。</span><br><span class="line">在单线程环境下，推荐使用StringBuilder具有更好的性能。如果在多线程环境中需要可变字符串，可以使用StringBuffer来保证线程安全性。</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>   String 适用于不需要修改字符串内容的情况，由于不可变性，它具有更好的内存管理和安全性。</p>
+<p>   StringBuffer 适用于多线程环境下需要修改字符串的情况，因为它是线程安全的，但性能相对较低。</p>
+<p>   StringBuilder 适用于单线程环境下需要修改字符串的情况，因为它性能较好，但不具备线程安全性。</p>
+<ol start="3">
+<li><p>字符串拼接</p>
+<p>省流：用 + 效率更高</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">concat()方法是 String类的实例方法，用于将当前字符串与指定字符串连接起来，返回一个新的字符串。 </span><br><span class="line">   </span><br><span class="line">使用 + 运算符连接字符串时，编译器会自动优化为 StringBuilder 或 StringBuffer 对象的操作（取决于编译器和 JDK 版本），可以在原地修改，而不会生成过多的临时字符串对象。这样可以提高性能和节省内存 </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建格式化字符串</p>
+<p>我们都知道<code>printf</code>可以用于输出格式化的数字和字符，而字符串也有格式化创建的方法<code>format</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fs = String.format(<span class="string">&quot;浮点型变量的值为 &quot;</span> +</span><br><span class="line">                   <span class="string">&quot;%f, 整型变量的值为 &quot;</span> +</span><br><span class="line">                   <span class="string">&quot; %d, 字符串变量的值为 &quot;</span> +</span><br><span class="line">                   <span class="string">&quot; %s&quot;</span>, floatVar, intVar, stringVar);</span><br></pre></td></tr></table></figure>
+
+<p>当多处需要一定格式的字符串时可以使用<code>format</code>方法，这样得到的字符串不仅可以在一次输出时使用</p>
+</li>
+</ol>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><ol>
+<li><p>两种没有区别的声明&#x2F;初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span>[] myList;         <span class="comment">// Java程序员，首选的方法</span></span><br><span class="line"> </span><br><span class="line"><span class="type">double</span> myList[];        <span class="comment">//为照顾C、C++程序员的习惯</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化1， 会使用数据类型的默认值初始化数组元素</span></span><br><span class="line"><span class="type">double</span>[] myList = <span class="keyword">new</span> <span class="title class_">double</span>[arraySize];</span><br><span class="line"><span class="comment">//初始化2， 适用于已知元素初始值</span></span><br><span class="line"><span class="type">double</span>[] myList = &#123;value0, value1, ..., valuek&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//多维数组</span></span><br><span class="line">String[][] str = <span class="keyword">new</span> <span class="title class_">String</span>[n][m];</span><br></pre></td></tr></table></figure>
+
+<p> 从代码的可读性和清晰性角度考虑，推荐使用  double[] myList;  的方式来声明数组。这种方式更符合Java编程的风格和习惯，易于阅读和理解。 </p>
+</li>
+<li><p>java.util.Arrays 类处理数组</p>
+<p>Java 标准库提供工具类，提供一些便捷的方法用于对数组执行各种操作，如排序、搜索、比较等</p>
+</li>
+</ol>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//列举部分方法</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span>[] numbers = &#123;<span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">9</span>&#125;;</span><br><span class="line">        </span><br><span class="line"><span class="comment">// 使用 Arrays 类对数组进行升序排序</span></span><br><span class="line">Arrays.sort(numbers);</span><br><span class="line">        </span><br><span class="line"><span class="comment">// 使用 Arrays 类搜索元素在已排序数组中的位置</span></span><br><span class="line"><span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> Arrays.binarySearch(numbers, <span class="number">8</span>);</span><br><span class="line">        </span><br><span class="line"><span class="comment">// 使用 Arrays 类比较两个数组是否相等</span></span><br><span class="line"><span class="type">int</span>[] otherNumbers = &#123;<span class="number">5</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">9</span>&#125;;</span><br><span class="line"><span class="type">boolean</span> <span class="variable">areEqual</span> <span class="operator">=</span> Arrays.equals(numbers, otherNumbers);</span><br></pre></td></tr></table></figure>
+
+<h4 id="日期时间"><a href="#日期时间" class="headerlink" title="日期时间"></a>日期时间</h4><ol>
+<li><p>过时的Data类和新的日期和时间 API </p>
+<p> <code>java.util.Date</code> 类在 Java 中已经过时，主要是因为它在设计上存在以下问题，无法很好地应对复杂的日期和时间操作，以及时区等问题。</p>
+<ul>
+<li><p>不可变性： <code>java.util.Date</code> 类在设计上是可变的，这导致了在多线程环境下的线程安全性问题。</p>
+</li>
+<li><p>精度问题： <code>Date</code> 类精确到毫秒，但并没有提供处理纳秒级别精度的能力。</p>
+</li>
+<li><p>时区问题： <code>Date</code> 类没有考虑时区的概念，这在跨时区应用中会导致问题。</p>
+</li>
+<li><p>易混淆性：Date&#96; 类中的一些方法名不够清晰，易混淆。</p>
+</li>
+</ul>
+<p>Java 8 （既JDK1.8）引入了新的日期和时间 API，位于 <code>java.time</code> 包中，来解决这些问题。  <code>java.time</code> 包包含了以下类：</p>
+<ul>
+<li><code>LocalDate</code>：表示日期，无时区信息。</li>
+<li><code>LocalTime</code>：表示时间，无日期和时区信息。</li>
+<li><code>LocalDateTime</code>：表示日期和时间，无时区信息。</li>
+<li><code>ZonedDateTime</code>：表示带有时区的日期和时间。</li>
+<li><code>Duration</code> 和 <code>Period</code>：用于处理时间间隔和日期间隔。</li>
+<li><code>Instant</code>：表示时间线上的一个点，精确到纳秒。</li>
+<li>等等…</li>
+</ul>
+<p>所以我们以下的笔记只学习<code>java.time</code> 包中常用类</p>
+</li>
+<li><p>日期和时间的初始化、比较和加减</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">///LocalDate表示日期，无时区信息</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">today</span> <span class="operator">=</span> LocalDate.now(); <span class="comment">// 获取当前日期</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">customDate</span> <span class="operator">=</span> LocalDate.of(<span class="number">2023</span>, <span class="number">8</span>, <span class="number">17</span>); <span class="comment">// 创建特定日期</span></span><br><span class="line"><span class="comment">// 使用 isBefore()、isAfter() 和 isEqual() 方法比较日期</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isBefore</span> <span class="operator">=</span> date1.isBefore(date2);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">isAfter</span> <span class="operator">=</span> date1.isAfter(date2);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">isEqual</span> <span class="operator">=</span> date1.isEqual(date2);</span><br><span class="line"><span class="comment">// 加2天</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">futureDate</span> <span class="operator">=</span> currentDate.plusDays(<span class="number">2</span>);</span><br><span class="line"><span class="comment">// 减1天</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">pastDate</span> <span class="operator">=</span> currentDate.minusDays(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//LocalTime表示时间，无日期和时区信息</span></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">currentTime</span> <span class="operator">=</span> LocalTime.now(); <span class="comment">// 获取当前时间</span></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">customTime</span> <span class="operator">=</span> LocalTime.of(<span class="number">15</span>, <span class="number">30</span>, <span class="number">0</span>); <span class="comment">// 创建特定时间</span></span><br><span class="line"><span class="comment">// 使用 isBefore()、isAfter() 方法比较时间</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isBefore</span> <span class="operator">=</span> time1.isBefore(time2);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">isAfter</span> <span class="operator">=</span> time1.isAfter(time2);       </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//LocalDateTime表示日期和时间，无时区信息</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">currentDateTime</span> <span class="operator">=</span> LocalDateTime.now(); <span class="comment">// 获取当前日期和时间</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">customDateTime</span> <span class="operator">=</span> LocalDateTime.of(<span class="number">2023</span>, <span class="number">8</span>, <span class="number">17</span>, <span class="number">15</span>, <span class="number">30</span>, <span class="number">0</span>); <span class="comment">// 创建特定日期和时间</span></span><br><span class="line"><span class="comment">// 使用 isBefore()、isAfter() 方法比较日期时间</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">isBefore</span> <span class="operator">=</span> dateTime1.isBefore(dateTime2);</span><br><span class="line"><span class="type">boolean</span> <span class="variable">isAfter</span> <span class="operator">=</span> dateTime1.isAfter(dateTime2);</span><br><span class="line"><span class="comment">// 加3小时</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">futureDateTime</span> <span class="operator">=</span> currentDateTime.plusHours(<span class="number">3</span>); </span><br><span class="line"><span class="comment">// 减30分钟</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">pastDateTime</span> <span class="operator">=</span> currentDateTime.minusMinutes(<span class="number">30</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//ZonedDateTime：表示带有时区的日期和时间</span></span><br><span class="line"><span class="type">ZonedDateTime</span> <span class="variable">currentDateTime</span> <span class="operator">=</span> ZonedDateTime.now(); <span class="comment">// 获取当前带时区的日期和时间</span></span><br><span class="line"><span class="type">ZoneId</span> <span class="variable">newYorkZone</span> <span class="operator">=</span> ZoneId.of(<span class="string">&quot;America/New_York&quot;</span>);<span class="comment">//指定时区</span></span><br><span class="line"><span class="type">ZonedDateTime</span> <span class="variable">customDateTime</span> <span class="operator">=</span> ZonedDateTime.of(<span class="number">2023</span>, <span class="number">8</span>, <span class="number">17</span>, <span class="number">15</span>, <span class="number">30</span>, <span class="number">0</span>, <span class="number">0</span>, newYorkZone); <span class="comment">// 创建带时区的特定日期和时间</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//Duration用于处理时间间隔</span></span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">startTime</span> <span class="operator">=</span> LocalTime.of(<span class="number">10</span>, <span class="number">0</span>);</span><br><span class="line"><span class="type">LocalTime</span> <span class="variable">endTime</span> <span class="operator">=</span> LocalTime.of(<span class="number">14</span>, <span class="number">30</span>);</span><br><span class="line"><span class="type">Duration</span> <span class="variable">duration</span> <span class="operator">=</span> Duration.between(startTime, endTime);</span><br><span class="line">System.out.println(<span class="string">&quot;Duration: &quot;</span> + duration);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//Period用于处理日期间隔。</span></span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">startDate</span> <span class="operator">=</span> LocalDate.of(<span class="number">2023</span>, <span class="number">8</span>, <span class="number">1</span>);</span><br><span class="line"><span class="type">LocalDate</span> <span class="variable">endDate</span> <span class="operator">=</span> LocalDate.of(<span class="number">2023</span>, <span class="number">8</span>, <span class="number">17</span>);</span><br><span class="line"><span class="type">Period</span> <span class="variable">period</span> <span class="operator">=</span> Period.between(startDate, endDate);</span><br><span class="line">System.out.println(<span class="string">&quot;Period: &quot;</span> + period);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//Instant表示时间线上的一个点，精确到纳秒。</span></span><br><span class="line"><span class="type">Instant</span> <span class="variable">currentInstant</span> <span class="operator">=</span> Instant.now(); <span class="comment">// 获取当前时间点</span></span><br><span class="line">System.out.println(<span class="string">&quot;Current instant: &quot;</span> + currentInstant);</span><br><span class="line"><span class="type">Instant</span> <span class="variable">specificInstant</span> <span class="operator">=</span> Instant.ofEpochSecond(<span class="number">1629187200</span>); <span class="comment">// 使用时间戳创建时间点</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>日期和时间的格式化编码</p>
+<p> 使用 <code>java.time.format.DateTimeFormatter</code> 类来进行日期和时间的格式化操作。</p>
+<p>其提供了多种选项定义所需的格式，可以将日期、时间、日期时间对象转换为字符串，或将字符串解析为日期、时间、日期时间对象 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">日期格式选项：</span></span><br><span class="line"><span class="comment">y：年份（如 yy 表示两位年份，yyyy 表示四位年份）。</span></span><br><span class="line"><span class="comment">M：月份，MM 表示两位月份，MMM 表示缩写月份，MMMM 表示完整月份。</span></span><br><span class="line"><span class="comment">d：日（如 dd 表示两位日）。</span></span><br><span class="line"><span class="comment">E：星期几，EEE 表示缩写星期几，EEEE 表示完整星期几。</span></span><br><span class="line"><span class="comment">时间格式选项：</span></span><br><span class="line"><span class="comment">H：小时数（24小时制，如 HH 表示两位小时数）。</span></span><br><span class="line"><span class="comment">h：小时数（12小时制，如 hh 表示两位小时数）。</span></span><br><span class="line"><span class="comment">m：分钟（如 mm 表示两位分钟数）。</span></span><br><span class="line"><span class="comment">s：秒（如 ss 表示两位秒数）。</span></span><br><span class="line"><span class="comment">S：毫秒（如 SSS 表示三位毫秒数）。</span></span><br><span class="line"><span class="comment">其他选项：</span></span><br><span class="line"><span class="comment">a：上午/下午标记。</span></span><br><span class="line"><span class="comment">z：时区缩写。</span></span><br><span class="line"><span class="comment">Z：时区偏移。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//例子：</span></span><br><span class="line"><span class="comment">// 定义时间格式模式</span></span><br><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">timeFormatter</span> <span class="operator">=</span> DateTimeFormatter.ofPattern(<span class="string">&quot;HH:mm:ss&quot;</span>);</span><br><span class="line"><span class="comment">// 将时间对象格式化为字符串</span></span><br><span class="line"><span class="type">String</span> <span class="variable">formattedTime</span> <span class="operator">=</span> currentTime.format(timeFormatter);</span><br><span class="line">System.out.println(<span class="string">&quot;Formatted Time: &quot;</span> + formattedTime);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取当前日期时间</span></span><br><span class="line"><span class="type">LocalDateTime</span> <span class="variable">currentDateTime</span> <span class="operator">=</span> LocalDateTime.now();</span><br><span class="line"><span class="comment">// 定义日期时间格式模式</span></span><br><span class="line"><span class="type">DateTimeFormatter</span> <span class="variable">dateTimeFormatter</span> <span class="operator">=</span> DateTimeFormatter.ofPattern(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line"><span class="comment">// 将日期时间对象格式化为字符串</span></span><br><span class="line"><span class="type">String</span> <span class="variable">formattedDateTime</span> <span class="operator">=</span> currentDateTime.format(dateTimeFormatter);</span><br><span class="line">System.out.println(<span class="string">&quot;Formatted DateTime: &quot;</span> + formattedDateTime);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>测量时间间隔</p>
+<p>有时候会有需要测量时间间隔的需求，下面举例测量一段代码运行的时间间隔的例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> <span class="variable">startTime</span> <span class="operator">=</span> System.nanoTime(); <span class="comment">// 获取开始时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在这里执行你的代码</span></span><br><span class="line"></span><br><span class="line"><span class="type">long</span> <span class="variable">endTime</span> <span class="operator">=</span> System.nanoTime();   <span class="comment">// 获取结束时间        </span></span><br><span class="line"><span class="type">long</span> <span class="variable">elapsedTime</span> <span class="operator">=</span> endTime - startTime; <span class="comment">// 计算时间差（纳秒）        </span></span><br><span class="line"><span class="type">double</span> <span class="variable">seconds</span> <span class="operator">=</span> (<span class="type">double</span>) elapsedTime / <span class="number">1_000_000_000.0</span>; <span class="comment">// 转换为秒</span></span><br><span class="line">System.out.println(<span class="string">&quot;Code execution time: &quot;</span> + seconds + <span class="string">&quot; seconds&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4> 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/11/10/Java%E6%9F%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/11/10/MyBatisPlus%20queryWrapper/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            MyBatisPlus queryWrapper
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/10/08/Vue+SpringBoot-4(%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92)/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Vue+SpringBoot-4（前后端交互）</div>
+      </a>
+    
+  </nav>
+
+  
+   
+  
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2022-2023
+        <i class="ri-heart-fill heart_icon"></i> LXH
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="LXH"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags/%E6%97%85%E8%A1%8C/">旅行</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/2019/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+</body>
+
+</html>

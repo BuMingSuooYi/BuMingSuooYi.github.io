@@ -80,7 +80,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">333</span>
+            <span class="post-count">657</span>
         </span>
     </span>
 
@@ -89,7 +89,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
@@ -140,10 +140,49 @@
 <p>（ 设置Git在显示文件路径时不对路径中的非ASCII字符进行转义显示 ）</p>
 </li>
 <li><p>在${git_home}&#x2F;etc&#x2F;bash.bashrc文件最后两行加入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LANG=&quot;zh_CN.UTF-8&quot;</span><br><span class="line">export LC_ALL=&quot;zh_CN.UTF-8&quot;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LANG=&quot;zh_CN.UTF-8&quot;</span><br><span class="line">export LC_ALL=&quot;zh_CN.UTF-8&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>z</p>
+</li>
 </ul>
 </li>
 </ol>
+<h3 id="git使用github"><a href="#git使用github" class="headerlink" title="git使用github"></a>git使用github</h3><h4 id="github与本地计算机关联"><a href="#github与本地计算机关联" class="headerlink" title="github与本地计算机关联"></a>github与本地计算机关联</h4><h5 id="添加SSH公钥"><a href="#添加SSH公钥" class="headerlink" title="添加SSH公钥"></a>添加SSH公钥</h5><ol>
+<li><p>在<code>settings</code>的<code>SSH and GPS keys</code>查看是否有公钥</p>
+</li>
+<li><p>命令行 查看git全局配置，看是否配置提交用户信息</p>
+<p>查看git是否全局设置 :</p>
+<p><code>git config --global --list</code> </p>
+<p>配置或修改提交用户信息</p>
+<p><code>git config --global --unset user.name &quot;user.name&quot; </code></p>
+<p><code>git config --global --unset user.email &quot;user.email&quot; </code></p>
+</li>
+<li><p>生成SSH key</p>
+<p><code>ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C &quot;user.email&quot;</code></p>
+<p>执行上面命令后，将在计算机C盘的~&#x2F;.ssh&#x2F;路径生成一系列文件</p>
+</li>
+<li><p>…创建conf文件并在gihub复制创建的私密等等，后面再写</p>
+</li>
+<li></li>
+</ol>
+<h4 id="初始化项目并托管到github"><a href="#初始化项目并托管到github" class="headerlink" title="初始化项目并托管到github"></a>初始化项目并托管到github</h4><ol>
+<li><p>在github创建新项目</p>
+<p>填写信息包含：仓库名称、描述信息、是否公开等</p>
+</li>
+<li><p>打开项目文件初始化作为本地仓库</p>
+<p>git仓库初始化：<code>git init</code></p>
+</li>
+<li><p>进入本地仓库文件夹，和远程仓库关联</p>
+<p>和远程库关联：<code>git remote add origin git@github.com:BuMingSuooYi/reconnaissancbackend.git</code></p>
+<p>拉取最新并合并分支：<code>git pull origin main</code></p>
+</li>
+<li><p>第一次上传提交</p>
+<p>添加所有文件<code>git add .</code></p>
+<p>放入缓冲区<code>git commit -m &#39;init&#39;</code></p>
+<p>推送(第一次要加上仓库名和分支)<code>git push -u origin main</code></p>
+</li>
+</ol>
+<p>这样就将本地的项目托管到了github平台了</p>
  
       <!-- reward -->
       
